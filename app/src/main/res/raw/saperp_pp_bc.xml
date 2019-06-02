@@ -1,0 +1,1487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="DATRAIN.BC_SRV" xml:lang="de" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="notif" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="applicationId"/>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="applicationId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Anwendung" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="id" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Meldung" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="typeId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Meldungsart" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="name" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Kurztext zur Meldung" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="createdAtDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Erfassungsdatum" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="startAtDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Gew.Beginn" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="endAtDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Gew.Ende" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="dueToDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Erfassungsdatum" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="closedAtDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Erfassungsdatum" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="functionalLocationId" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Techn. Platz" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="workplaceId" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Arbeitsplatz" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="workplaceName" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Arbpl Name" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="rentalObjectId" Type="Edm.String" Nullable="false" MaxLength="13" sap:unicode="false" sap:label="ID des Mietobjektes" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="contractId" Type="Edm.String" Nullable="false" MaxLength="13" sap:unicode="false" sap:label="ID des Mietobjektes" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="issuerId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Partnernr" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="vendorId" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Kreditor" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="vendorName" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Lieferantenname" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="iconName" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Name einer Ikone" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="categoryId" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Codegruppe" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="categoryName" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Codegruppentext" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="descriptionId" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="MA-Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="descriptionName" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Codegruppentext" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="statusId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="ID ausgez. Codierung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="statusName" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Bezeichnung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="sourceNotificationId" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Urspr.Meldung" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="isClosed" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="tabId" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Reiter" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="rotaId" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Komponente der Versionsnummer" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="formId" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="FORMID" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="terminationReasonId" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="K�ndigungsgrund" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="terminationReasonName" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="K�ndigungsgrund" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="filterId" Type="Edm.String" MaxLength="32" sap:unicode="false" sap:label="FilterID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="transmittedAtDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="�brer. am" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="finishedAtDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="fertig am" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="materialGroupId" Type="Edm.String" Nullable="false" MaxLength="9" sap:unicode="false" sap:label="Warengruppe" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="materialGroupName" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Warengrbez. 2" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="serviceTypeId" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Leistungsart" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="serviceTypeName" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="ILA-Bezeichnung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="description" Type="Edm.String" sap:unicode="false" sap:label="LTEXT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="name1" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Name 2" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="name2" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="name3" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Name 3" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="name4" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Name 4" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="street" Type="Edm.String" MaxLength="60" sap:unicode="false" sap:label="Stra�e" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="houseNumber1" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Hausnummer" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="houseNumber2" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Zusatz" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="zipCode" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Postleitzahl" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="city" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Ort" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="statusId2" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="ID ausgez. Codierung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="statusId3" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="ID ausgez. Codierung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="property" Relationship="DATRAIN.BC_SRV.Asoc_notif_property" FromRole="FromRole_Asoc_notif_property" ToRole="ToRole_Asoc_notif_property"/>
+                <NavigationProperty Name="functionalLocation" Relationship="DATRAIN.BC_SRV.Asoc_notif_functionalLocation" FromRole="FromRole_Asoc_notif_functionalLocation" ToRole="ToRole_Asoc_notif_functionalLocation"/>
+                <NavigationProperty Name="contract" Relationship="DATRAIN.BC_SRV.Asoc_notif_contract" FromRole="FromRole_Asoc_notif_contract" ToRole="ToRole_Asoc_notif_contract"/>
+                <NavigationProperty Name="tenants" Relationship="DATRAIN.BC_SRV.Asoc_notif_tenants" FromRole="FromRole_Asoc_notif_tenants" ToRole="ToRole_Asoc_notif_tenants"/>
+                <NavigationProperty Name="sourceNotification" Relationship="DATRAIN.BC_SRV.Asoc_notif_source" FromRole="FromRole_Asoc_notif_source" ToRole="ToRole_Asoc_notif_source"/>
+                <NavigationProperty Name="followUpNotifications" Relationship="DATRAIN.BC_SRV.Asoc_notif_target" FromRole="FromRole_Asoc_notif_target" ToRole="ToRole_Asoc_notif_target"/>
+                <NavigationProperty Name="issuer" Relationship="DATRAIN.BC_SRV.Asoc_notif_issuer" FromRole="FromRole_Asoc_notif_issuer" ToRole="ToRole_Asoc_notif_issuer"/>
+                <NavigationProperty Name="files" Relationship="DATRAIN.BC_SRV.Asoc_notif_documents" FromRole="FromRole_Asoc_notif_documents" ToRole="ToRole_Asoc_notif_documents"/>
+                <NavigationProperty Name="history" Relationship="DATRAIN.BC_SRV.Asoc_notif_history" FromRole="FromRole_Asoc_notif_history" ToRole="ToRole_Asoc_notif_history"/>
+                <NavigationProperty Name="vendor" Relationship="DATRAIN.BC_SRV.Asoc_notif_vendor" FromRole="FromRole_Asoc_notif_vendor" ToRole="ToRole_Asoc_notif_vendor"/>
+            </EntityType>
+            <EntityType Name="quicklink" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="tileId"/>
+                    <PropertyRef Name="pageId"/>
+                </Key>
+                <Property Name="tileId" Type="Edm.String" Nullable="false" MaxLength="36" sap:unicode="false" sap:label="Funktion im JSON File" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="pageId" Type="Edm.String" Nullable="false" MaxLength="32" sap:unicode="false" sap:label="PageID" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="title" Type="Edm.String" Nullable="false" MaxLength="32" sap:unicode="false" sap:label="Titel" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="field" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="applicationId"/>
+                    <PropertyRef Name="screenId"/>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="applicationId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Anwendung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="screenId" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Bildabschnitt" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="id" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Feldname" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="externalId" Type="Edm.String" Nullable="false" MaxLength="128" sap:unicode="false" sap:label="Ext. Feldname" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="sortId" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Posnr." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="dataTypeId" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Datentyp" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="outputLength" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Zahl der Stellen" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="decimals" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Dezimalstellen" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="length" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Zahl der Stellen" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="label" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Feldbez. lang" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="screenTypeId" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Feldtyp auf Screen" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="isRequired" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Pflichtfeld" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="isDisabled" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="nur Anzeige" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="defaultValue" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Defaultwert (von)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="defaultValue2" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Defaultwert (bis)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="isHidden" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="unsichtbar" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="selectOptions" Relationship="DATRAIN.BC_SRV.Asoc_field_dropDowns" FromRole="FromRole_Asoc_field_dropDowns" ToRole="ToRole_Asoc_field_dropDowns"/>
+            </EntityType>
+            <EntityType Name="tile" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="id" Type="Edm.String" Nullable="false" MaxLength="36" sap:unicode="false" sap:label="Funktion im JSON File" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="pageId" Type="Edm.String" Nullable="false" MaxLength="32" sap:unicode="false" sap:label="PageID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="title" Type="Edm.String" Nullable="false" MaxLength="32" sap:unicode="false" sap:label="Titel" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="description" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Beschreibung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="iconId" Type="Edm.String" Nullable="false" MaxLength="64" sap:unicode="false" sap:label="CSS-Klasse IconFont" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="parentTask" Type="Edm.String" MaxLength="36" sap:unicode="false" sap:label="Funktion im JSON File" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="sortId" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="SORT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="quicklinks" Relationship="DATRAIN.BC_SRV.Asoc_tile_quicklinks" FromRole="FromRole_Asoc_tile_quicklinks" ToRole="ToRole_Asoc_tile_quicklinks"/>
+                <NavigationProperty Name="addFields" Relationship="DATRAIN.BC_SRV.Asoc_tile_addFields" FromRole="FromRole_Asoc_tile_addFields" ToRole="ToRole_Asoc_tile_addFields"/>
+                <NavigationProperty Name="subtiles" Relationship="DATRAIN.BC_SRV.Asoc_tile_subtiles" FromRole="FromRole_Asoc_tile_subtiles" ToRole="ToRole_Asoc_tile_subtiles"/>
+            </EntityType>
+            <EntityType Name="subtile" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="parentTask"/>
+                    <PropertyRef Name="task"/>
+                </Key>
+                <Property Name="parentTask" Type="Edm.String" Nullable="false" MaxLength="36" sap:unicode="false" sap:label="Funktion im JSON File" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="task" Type="Edm.String" Nullable="false" MaxLength="36" sap:unicode="false" sap:label="Funktion im JSON File" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="pageId" Type="Edm.String" Nullable="false" MaxLength="32" sap:unicode="false" sap:label="PageID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="title" Type="Edm.String" Nullable="false" MaxLength="32" sap:unicode="false" sap:label="Titel" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="description" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Beschreibung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="iconId" Type="Edm.String" Nullable="false" MaxLength="64" sap:unicode="false" sap:label="CSS-Klasse IconFont" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="sortId" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="SORT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="property" sap:label="Mietobjekte (2)" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="applicationId"/>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="address" Type="DATRAIN.BC_SRV.address" Nullable="false"/>
+                <Property Name="position" Type="DATRAIN.BC_SRV.position" Nullable="false"/>
+                <Property Name="applicationId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Anwendung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="id" Type="Edm.String" Nullable="false" MaxLength="13" sap:unicode="false" sap:label="ID des Mietobjektes" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="typeId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Typ Objekt" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="companyCodeId" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Buchungskreis" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="businessUnitId" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Wirtschaftseinheit" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="rentalObjectId" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Mieteinheit" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="buildingId" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Geb�ude" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="plotId" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Grundst�ck" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="functionalLocationId" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Technischer Platz" sap:creatable="false" sap:updatable="false"/>
+                <NavigationProperty Name="notifications" Relationship="DATRAIN.BC_SRV.Asoc_property_notif" FromRole="FromRole_Asoc_property_notif" ToRole="ToRole_Asoc_property_notif"/>
+                <NavigationProperty Name="functionalLocation" Relationship="DATRAIN.BC_SRV.Asoc_property_functionalLocation" FromRole="FromRole_Asoc_property_functionalLocation" ToRole="ToRole_Asoc_property_functionalLocation"/>
+            </EntityType>
+            <EntityType Name="functionalLocation" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="applicationId"/>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="address" Type="DATRAIN.BC_SRV.address" Nullable="false"/>
+                <Property Name="geoCoordinates" Type="DATRAIN.BC_SRV.geoCoordinates" Nullable="false"/>
+                <Property Name="applicationId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Anwendung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="id" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Techn. Platz" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="name" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Bezeichnung" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="typeId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Objektart" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="typeName" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Text zum Bautyp" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="parentiId" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Techn. Platz" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="billOfMaterialId" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="St�ckliste" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="alternativeId" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Techn. Platz" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="tempId" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Techn. Platz" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="propertyId" Type="Edm.String" MaxLength="13" sap:unicode="false" sap:label="ID des Mietobjektes" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="orderId" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Sortierung" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="hasDelete" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="L�schkennz." sap:creatable="false" sap:updatable="false"/>
+                <NavigationProperty Name="notifications" Relationship="DATRAIN.BC_SRV.Asoc_functionalLocation_notif" FromRole="FromRole_Asoc_functionalLocation_notif" ToRole="ToRole_Asoc_functionalLocation_notif"/>
+                <NavigationProperty Name="property" Relationship="DATRAIN.BC_SRV.Asoc_functionalLocation_property" FromRole="FromRole_Asoc_functionalLocation_property" ToRole="ToRole_Asoc_functionalLocation_property"/>
+                <NavigationProperty Name="children" Relationship="DATRAIN.BC_SRV.Asoc_functionalLocation_children" FromRole="FromRole_Asoc_functionalLocation_children" ToRole="ToRole_Asoc_functionalLocation_children"/>
+                <NavigationProperty Name="parent" Relationship="DATRAIN.BC_SRV.Asoc_functionalLocation_parent" FromRole="FromRole_Asoc_functionalLocation_parent" ToRole="ToRole_Asoc_functionalLocation_parent"/>
+                <NavigationProperty Name="materials" Relationship="DATRAIN.BC_SRV.Asoc_functionalLocation_material" FromRole="FromRole_Asoc_functionalLocation_material" ToRole="ToRole_Asoc_functionalLocation_material"/>
+                <NavigationProperty Name="path" Relationship="DATRAIN.BC_SRV.Asoc_functionalLocation_path" FromRole="FromRole_Asoc_functionalLocation_path" ToRole="ToRole_Asoc_functionalLocation_path"/>
+                <NavigationProperty Name="subGeoCoordinates" Relationship="DATRAIN.BC_SRV.Asoc_functionalLocation_geoCords" FromRole="FromRole_Asoc_functionalLocation_geoCords" ToRole="ToRole_Asoc_functionalLocation_geoCords"/>
+                <NavigationProperty Name="subAddresses" Relationship="DATRAIN.BC_SRV.Asoc_functionalLocation_address" FromRole="FromRole_Asoc_functionalLocation_address" ToRole="ToRole_Asoc_functionalLocation_address"/>
+                <NavigationProperty Name="assemblies" Relationship="DATRAIN.BC_SRV.Asoc_functionalLocation_assembly" FromRole="FromRole_Asoc_functionalLocation_assembly" ToRole="ToRole_Asoc_functionalLocation_assembly"/>
+            </EntityType>
+            <EntityType Name="contract" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="applicationId"/>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="applicationId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Anwendung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="id" Type="Edm.String" Nullable="false" MaxLength="13" sap:unicode="false" sap:label="ID des Mietobjektes" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="companyCode" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Buchungskreis" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="number" Type="Edm.String" Nullable="false" MaxLength="13" sap:unicode="false" sap:label="Vertragsnr." sap:creatable="false" sap:updatable="false"/>
+                <Property Name="typeId" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="VertragsA" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="typeName" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Vertragsart" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="beginAtDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Vetragsbeginn" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="endAtDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Vetragsende" sap:creatable="false" sap:updatable="false"/>
+                <NavigationProperty Name="notifications" Relationship="DATRAIN.BC_SRV.Asoc_contract_notif" FromRole="FromRole_Asoc_contract_notif" ToRole="ToRole_Asoc_contract_notif"/>
+                <NavigationProperty Name="tenants" Relationship="DATRAIN.BC_SRV.Asoc_contract_tenant" FromRole="FromRole_Asoc_contract_tenant" ToRole="ToRole_Asoc_contract_tenant"/>
+            </EntityType>
+            <EntityType Name="tenant" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="applicationId"/>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="address" Type="DATRAIN.BC_SRV.address" Nullable="false"/>
+                <Property Name="contact" Type="DATRAIN.BC_SRV.contact" Nullable="false"/>
+                <Property Name="applicationId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Anwendung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="id" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="GeschPartner" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="name1" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Vorname" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="name2" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Nachname" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="name3" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Name 3" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="name4" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Name 4" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="roleId" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="GP-Rolle" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="roleName" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Titel" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="contractId" Type="Edm.String" Nullable="false" MaxLength="13" sap:unicode="false" sap:label="ID des Mietobjektes" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="isMainTenant" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="debitor. Hauptmieter" sap:creatable="false" sap:updatable="false"/>
+                <NavigationProperty Name="contracts" Relationship="DATRAIN.BC_SRV.Asoc_tenant_contract" FromRole="FromRole_Asoc_tenant_contract" ToRole="ToRole_Asoc_tenant_contract"/>
+                <NavigationProperty Name="notifications" Relationship="DATRAIN.BC_SRV.Asoc_tenant_notifications" FromRole="FromRole_Asoc_tenant_notifications" ToRole="ToRole_Asoc_tenant_notifications"/>
+            </EntityType>
+            <EntityType Name="application" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="id" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Anwendung" sap:creatable="false" sap:updatable="false"/>
+                <NavigationProperty Name="notifications" Relationship="DATRAIN.BC_SRV.Asoc_application_notif" FromRole="FromRole_Asoc_application_notif" ToRole="ToRole_Asoc_application_notif"/>
+                <NavigationProperty Name="functionalLocations" Relationship="DATRAIN.BC_SRV.Asoc_application_functionalLocation" FromRole="FromRole_Asoc_application_functionalLocation" ToRole="ToRole_Asoc_application_functionalLocation"/>
+            </EntityType>
+            <EntityType Name="partner" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="applicationId"/>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="address" Type="DATRAIN.BC_SRV.address" Nullable="false"/>
+                <Property Name="contact" Type="DATRAIN.BC_SRV.contact" Nullable="false"/>
+                <Property Name="applicationId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Anwendung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="id" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="GeschPartner" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="name1" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Vorname" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="name2" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Nachname" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="name3" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Name 3" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="name4" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Name 4" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="roleId" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="GP-Rolle" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="roleName" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Titel" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="notifications" Relationship="DATRAIN.BC_SRV.Asoc_issuer_notif" FromRole="FromRole_Asoc_issuer_notif" ToRole="ToRole_Asoc_issuer_notif"/>
+            </EntityType>
+            <EntityType Name="code" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="applicationId"/>
+                    <PropertyRef Name="notificationTypeId"/>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="applicationId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Anwendung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="notificationTypeId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Meldungsart" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="id" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="ID ausgez. Codierung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="name" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Codegruppentext" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="text" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Codierungslangtext" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="createdAtDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Erfassungsdatum" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="statusId" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="WS: Massnahmenstatus" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="details" Relationship="DATRAIN.BC_SRV.Asoc_code_parv" FromRole="FromRole_Asoc_code_parv" ToRole="ToRole_Asoc_code_parv"/>
+                <NavigationProperty Name="followupCodes" Relationship="DATRAIN.BC_SRV.Asoc_code_succCodes" FromRole="FromRole_Asoc_code_succCodes" ToRole="ToRole_Asoc_code_succCodes"/>
+                <NavigationProperty Name="order" Relationship="DATRAIN.BC_SRV.Asoc_code_codeOrder" FromRole="FromRole_Asoc_code_codeOrder" ToRole="ToRole_Asoc_code_codeOrder"/>
+            </EntityType>
+            <EntityType Name="parameter" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="applicationId"/>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="applicationId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Anwendung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="id" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Feldname" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="name" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Feldbez. lang" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="value" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Feldwert (von, wenn FIELDVALUE_HIGH gef�llt)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="valueName" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="FIELDVALUE_LOW_TEXT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="value2" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="bis Feldwert" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="value2Name" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="FIELDVALUE_HIGH_TEXT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="dataTypeId" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Datentyp" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="material" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="applicationId"/>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="applicationId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Anwendung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="id" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Materialnummer" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="name" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Materialkurztext" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="isChangeable" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Konfigurierbar" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <NavigationProperty Name="fields" Relationship="DATRAIN.BC_SRV.Asoc_material_fields" FromRole="FromRole_Asoc_material_fields" ToRole="ToRole_Asoc_material_fields"/>
+            </EntityType>
+            <EntityType Name="functionalLocationPath" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="applicationId"/>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="applicationId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Anwendung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="id" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Techn. Platz" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="name" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Bezeichnung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="typeId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Objektart" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="typeName" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Text zum Bautyp" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="subGeoCoordinate" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="id" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Techn. Platz" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="longitude" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="L�ngengrad" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="latitude" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="L�ngengrad" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="subAddress" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="street"/>
+                    <PropertyRef Name="houseNum1"/>
+                    <PropertyRef Name="houseNum2"/>
+                    <PropertyRef Name="zipCode"/>
+                    <PropertyRef Name="city"/>
+                    <PropertyRef Name="country"/>
+                    <PropertyRef Name="region"/>
+                </Key>
+                <Property Name="street" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Stra�e" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="houseNum1" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Hausnummer" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="houseNum2" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Zusatz" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="zipCode" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Postleitzahl" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="city" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Ort" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="country" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Land" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="region" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Region" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="assembly" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="applicationId"/>
+                    <PropertyRef Name="id"/>
+                    <PropertyRef Name="functionalLocationId"/>
+                </Key>
+                <Property Name="applicationId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Anwendung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="id" Type="Edm.String" Nullable="false" MaxLength="128" sap:unicode="false" sap:label="St�cklistenpos.-ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="functionalLocationId" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Techn. Platz" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="name" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="St�cklistennummer" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="typeId" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="St�cklistentyp" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="nodeId" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="St�cklistenknoten" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="counterId" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="St�cklistenposition" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="materialId" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Materialnummer" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="materialName" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Materialkurztext" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="hasDelete" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Flag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="notificationId" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Meldung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="fields" Relationship="DATRAIN.BC_SRV.Asoc_assembly_fields" FromRole="FromRole_Asoc_assembly_fields" ToRole="ToRole_Asoc_assembly_fields"/>
+            </EntityType>
+            <EntityType Name="materialField" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="applicationId"/>
+                    <PropertyRef Name="functionalLocationId"/>
+                    <PropertyRef Name="billOfMaterialId"/>
+                    <PropertyRef Name="id"/>
+                    <PropertyRef Name="notificationId"/>
+                </Key>
+                <Property Name="applicationId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Anwendung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="functionalLocationId" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Techn. Platz" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="billOfMaterialId" Type="Edm.String" Nullable="false" MaxLength="128" sap:unicode="false" sap:label="St�cklistenpos.-ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="id" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Feldname" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="fieldlabel" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Text in der L�nge 40" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="value" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="unitId" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Feldname" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="sortId" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Tabellenpos." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="notificationId" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Meldungsnummer" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="properties" Relationship="DATRAIN.BC_SRV.Asoc_materialField_properties" FromRole="FromRole_Asoc_materialField_properties" ToRole="ToRole_Asoc_materialField_properties"/>
+            </EntityType>
+            <EntityType Name="materialFieldProperty" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="id" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Feldname" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="screenTypeId" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Feldtyp auf Screen" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stlnr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="St�ckliste" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stlkn" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Knotennummer der St�cklistenposition" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stpoz" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Interner Z�hler" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="length" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Zahl der Stellen" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="decimals" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Dezimalstellen" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="dataTypeId" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Dynprodatentyp" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="internalLength" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Interne_L�nge" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="internalType" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="ABAP-Typ" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="outputLength" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Ausgabel�nge" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Shlp" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Suchhilfename" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Shlpkey" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Feldname" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="required" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Flag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Convexit" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Konvert-Rout." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Meins" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Basis-ME" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+                <NavigationProperty Name="dropDownValues" Relationship="DATRAIN.BC_SRV.Asoc_materialFieldProp_dropDown" FromRole="FromRole_Asoc_materialFieldProp_dropDown" ToRole="ToRole_Asoc_materialFieldProp_dropDown"/>
+            </EntityType>
+            <EntityType Name="selectOption" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="value"/>
+                </Key>
+                <Property Name="value" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="name" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="file" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="applicationId"/>
+                    <PropertyRef Name="id"/>
+                    <PropertyRef Name="referenceId"/>
+                </Key>
+                <Property Name="applicationId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Anwendung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="id" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="DokumentenID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="referenceId" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="ObjektID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="typeId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Objektart" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="createdAtDateTime" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Angelegt am" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="name" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Dateiname" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="mimeType" Type="Edm.String" Nullable="false" MaxLength="128" sap:unicode="false" sap:label="Mimetype" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="sortId" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Posnr." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="isBold" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Fettdruck" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="content" Relationship="DATRAIN.BC_SRV.Asoc_file_content" FromRole="FromRole_Asoc_file_content" ToRole="ToRole_Asoc_file_content"/>
+            </EntityType>
+            <EntityType Name="fileContent" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="applicationId"/>
+                    <PropertyRef Name="id"/>
+                    <PropertyRef Name="referenceId"/>
+                </Key>
+                <Property Name="applicationId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Anwendung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="id" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="DokumentenID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="contentAsBase64" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Fileinhalt" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="referenceId" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="ObjektID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="metaData" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="applicationId"/>
+                </Key>
+                <Property Name="applicationId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Anwendung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="deficiencyLetter" Relationship="DATRAIN.BC_SRV.Asoc_meta_defLetter" FromRole="FromRole_Asoc_meta_defLetter" ToRole="ToRole_Asoc_meta_defLetter"/>
+                <NavigationProperty Name="activities" Relationship="DATRAIN.BC_SRV.Asoc_meta_activities" FromRole="FromRole_Asoc_meta_activities" ToRole="ToRole_Asoc_meta_activities"/>
+                <NavigationProperty Name="details" Relationship="DATRAIN.BC_SRV.Asoc_meta_parv" FromRole="FromRole_Asoc_meta_parv" ToRole="ToRole_Asoc_meta_parv"/>
+                <NavigationProperty Name="tabs" Relationship="DATRAIN.BC_SRV.Asoc_meta_tabs" FromRole="FromRole_Asoc_meta_tabs" ToRole="ToRole_Asoc_meta_tabs"/>
+                <NavigationProperty Name="notificationTypes" Relationship="DATRAIN.BC_SRV.Asoc_meta_notiftype" FromRole="FromRole_Asoc_meta_notiftype" ToRole="ToRole_Asoc_meta_notiftype"/>
+            </EntityType>
+            <EntityType Name="notificationType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="applicationId"/>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="applicationId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Anwendung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="id" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Meldungsart" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="formId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="FormID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="iconId" Type="Edm.String" Nullable="false" MaxLength="64" sap:unicode="false" sap:label="CSS-Klasse IconFont" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="name" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="TEXT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="tabId" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Reiter" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="sortId" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Position" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="statusCodes" Relationship="DATRAIN.BC_SRV.Asoc_notiftype_codes" FromRole="FromRole_Asoc_notiftype_codes" ToRole="ToRole_Asoc_notiftype_codes"/>
+            </EntityType>
+            <EntityType Name="tab" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="applicationId"/>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="applicationId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Anwendung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="id" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Reiter" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="name" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="char20" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="sortId" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Position" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="codeOrder" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="MaOpen"/>
+                </Key>
+                <Property Name="MaOpen" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Offene Ma�nahme" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CodOrder" Type="Edm.Byte" Nullable="false" sap:unicode="false" sap:label="Anzeigespalte" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="activity" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="applicationId"/>
+                    <PropertyRef Name="id"/>
+                    <PropertyRef Name="notificationId"/>
+                </Key>
+                <Property Name="applicationId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Anwendung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="id" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="ScreenlayoutID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="notificationId" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Meldung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="isBulk" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Massenverarbeitung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="codeId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="ID ausgez. Codierung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="sortId" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Posnr." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="name" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Bezeichnung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="buttonText" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Bezeichnung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="fields" Relationship="DATRAIN.BC_SRV.Asoc_activity_fields" FromRole="FromRole_Asoc_activity_fields" ToRole="ToRole_Asoc_activity_fields"/>
+                <NavigationProperty Name="details" Relationship="DATRAIN.BC_SRV.Asoc_activity_parv" FromRole="FromRole_Asoc_activity_parv" ToRole="ToRole_Asoc_activity_parv"/>
+            </EntityType>
+            <EntityType Name="user" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="contact" Type="DATRAIN.BC_SRV.contact" Nullable="false"/>
+                <Property Name="id" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="IDP User" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="internalId" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Benutzername" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="nameFirst" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Vorname" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="nameLast" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Nachname" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="workplaceId" Type="Edm.String" MaxLength="8" sap:unicode="false" sap:label="Arbeitsplatz" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="vendor" Relationship="DATRAIN.BC_SRV.Asoc_user_vendor" FromRole="FromRole_Asoc_user_vendor" ToRole="ToRole_Asoc_user_vendor"/>
+            </EntityType>
+            <EntityType Name="vendor" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="contact" Type="DATRAIN.BC_SRV.contact" Nullable="false"/>
+                <Property Name="address" Type="DATRAIN.BC_SRV.address" Nullable="false"/>
+                <Property Name="id" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Kreditor" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="name" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Name 1" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="name2" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Name 2" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="userId" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="IDP User" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="deficiencyLetterMeta" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="applicationId"/>
+                </Key>
+                <Property Name="applicationId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Anwendung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="activities" Relationship="DATRAIN.BC_SRV.Asoc_defLetter_activities" FromRole="FromRole_Asoc_defLetter_activities" ToRole="ToRole_Asoc_defLetter_activities"/>
+            </EntityType>
+            <EntityType Name="filterCategory" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="applicationId"/>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="applicationId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Anwendung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="id" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Filterkategorie" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="name" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Bezeichnung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="layoutId" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="ScreenlayoutID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="screens" Relationship="DATRAIN.BC_SRV.Asoc_filterKat_screens" FromRole="FromRole_Asoc_filterKat_screens" ToRole="ToRole_Asoc_filterKat_screens"/>
+                <NavigationProperty Name="filters" Relationship="DATRAIN.BC_SRV.Asoc_filterKat_filter" FromRole="FromRole_Asoc_filterKat_filter" ToRole="ToRole_Asoc_filterKat_filter"/>
+            </EntityType>
+            <EntityType Name="filter" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="applicationId"/>
+                    <PropertyRef Name="categoryId"/>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="applicationId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Anwendung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="categoryId" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Filterkategorie" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="id" Type="Edm.String" Nullable="false" MaxLength="32" sap:unicode="false" sap:label="FilterID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="name" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Bezeichnung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="isPreset" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Default Filter" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="userId" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="IDP User" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="sapUserId" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Benutzername" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="values" Relationship="DATRAIN.BC_SRV.Asoc_filter_values" FromRole="FromRole_Asoc_filter_values" ToRole="ToRole_Asoc_filter_values"/>
+            </EntityType>
+            <EntityType Name="screen" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="applicationId"/>
+                    <PropertyRef Name="layoutId"/>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="applicationId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Anwendung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="layoutId" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="ScreenlayoutID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="id" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Bildabschnitt" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="name" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Bezeichnung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="sortId" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Posnr." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="fields" Relationship="DATRAIN.BC_SRV.Asoc_screen_fields" FromRole="FromRole_Asoc_screen_fields" ToRole="ToRole_Asoc_screen_fields"/>
+            </EntityType>
+            <EntityType Name="filterValue" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="applicationId"/>
+                    <PropertyRef Name="categoryId"/>
+                    <PropertyRef Name="filterId"/>
+                    <PropertyRef Name="id"/>
+                    <PropertyRef Name="counterId"/>
+                </Key>
+                <Property Name="applicationId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Anwendung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="categoryId" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Filterkategorie" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="filterId" Type="Edm.String" Nullable="false" MaxLength="32" sap:unicode="false" sap:label="FilterID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="id" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Feldname" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="counterId" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Laufende Nummer" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="option" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Typ der Komponente OPTION im Zeilentyp eines Ranges-Typ" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="sign" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Typ der Komponente SIGN im Zeilentyp eines Ranges-Typ" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="low" Type="Edm.String" Nullable="false" MaxLength="64" sap:unicode="false" sap:label="Parameterwert" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="high" Type="Edm.String" Nullable="false" MaxLength="64" sap:unicode="false" sap:label="Parameterwert" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="notificationHistory" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="applicationId"/>
+                    <PropertyRef Name="notificationId"/>
+                    <PropertyRef Name="codeId"/>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="applicationId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Anwendung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="notificationId" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Meldung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="codeId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="ID ausgez. Codierung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="id" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Schl�ssel" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="codeName" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Codegruppentext" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="description" Type="Edm.String" sap:unicode="false" sap:label="Codierungslangtext" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="createdAtDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Erfassungsdatum" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="statusId" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="WS: Massnahmenstatus" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="parameters" Relationship="DATRAIN.BC_SRV.Asoc_notifHistory_parv" FromRole="FromRole_Asoc_notifHistory_parv" ToRole="ToRole_Asoc_notifHistory_parv"/>
+            </EntityType>
+            <EntityType Name="notificationHistoryParv" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="applicationId"/>
+                    <PropertyRef Name="notificationId"/>
+                    <PropertyRef Name="codeId"/>
+                    <PropertyRef Name="manuId"/>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="applicationId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Anwendung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="notificationId" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Meldung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="codeId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="ID ausgez. Codierung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="manuId" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Schl�ssel" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="id" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Feldname" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="name" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Feldbez. lang" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="value" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Feldwert (von, wenn FIELDVALUE_HIGH gef�llt)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="valueName" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="FIELDVALUE_LOW_TEXT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="value2" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="bis Feldwert" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="value2Name" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="FIELDVALUE_HIGH_TEXT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="dataTypeId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Datentyp" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <ComplexType Name="position">
+                <Property Name="buildingSectionId" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Geb�udeteil" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="buildingSectionName" Type="Edm.String" Nullable="false" MaxLength="15" sap:label="Geb�udeteil" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="buildingSectionText" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Geb�udeteil" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="floorId" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Geschoss" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="floorName" Type="Edm.String" Nullable="false" MaxLength="15" sap:label="Geschoss kurz" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="floorText" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Geschoss" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="floorRangeId" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Geschoss Bis" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="floorRangeName" Type="Edm.String" Nullable="false" MaxLength="15" sap:label="Geschoss kurz" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="floorRangeText" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Geschoss" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="locationOnFloorId" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="LageImGeschoss" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="locationOnFloorName" Type="Edm.String" Nullable="false" MaxLength="15" sap:label="Lage im Geschoss" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="locationOnFloorText" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Lage im Geschoss" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </ComplexType>
+            <ComplexType Name="contact">
+                <Property Name="phone" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Telefon" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="mobile" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Mobiltelefon" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="email" Type="Edm.String" Nullable="false" MaxLength="241" sap:label="E-Mail-Adresse" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </ComplexType>
+            <ComplexType Name="address">
+                <Property Name="street" Type="Edm.String" Nullable="false" MaxLength="60" sap:label="Stra�e" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="houseNumber1" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Hausnummer" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="houseNumber2" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Zusatz" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="zipCode" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Postleitzahl" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="city" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Ort" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="country" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Land" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="region" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Region" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </ComplexType>
+            <ComplexType Name="geoCoordinates">
+                <Property Name="longitude" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="L�ngengrad" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="latitude" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="L�ngengrad" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </ComplexType>
+            <Association Name="Asoc_application_notif" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.application" Multiplicity="1" Role="FromRole_Asoc_application_notif"/>
+                <End Type="DATRAIN.BC_SRV.notif" Multiplicity="*" Role="ToRole_Asoc_application_notif"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Asoc_application_notif">
+                        <PropertyRef Name="id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Asoc_application_notif">
+                        <PropertyRef Name="applicationId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Asoc_application_functionalLocation" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.application" Multiplicity="1" Role="FromRole_Asoc_application_functionalLocation"/>
+                <End Type="DATRAIN.BC_SRV.functionalLocation" Multiplicity="*" Role="ToRole_Asoc_application_functionalLocation"/>
+            </Association>
+            <Association Name="Asoc_filter_values" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.filter" Multiplicity="1" Role="FromRole_Asoc_filter_values"/>
+                <End Type="DATRAIN.BC_SRV.filterValue" Multiplicity="*" Role="ToRole_Asoc_filter_values"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Asoc_filter_values">
+                        <PropertyRef Name="applicationId"/>
+                        <PropertyRef Name="categoryId"/>
+                        <PropertyRef Name="id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Asoc_filter_values">
+                        <PropertyRef Name="applicationId"/>
+                        <PropertyRef Name="categoryId"/>
+                        <PropertyRef Name="filterId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Asoc_code_parv" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.code" Multiplicity="1" Role="FromRole_Asoc_code_parv"/>
+                <End Type="DATRAIN.BC_SRV.parameter" Multiplicity="*" Role="ToRole_Asoc_code_parv"/>
+            </Association>
+            <Association Name="Asoc_code_codeOrder" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.code" Multiplicity="1" Role="FromRole_Asoc_code_codeOrder"/>
+                <End Type="DATRAIN.BC_SRV.codeOrder" Multiplicity="*" Role="ToRole_Asoc_code_codeOrder"/>
+            </Association>
+            <Association Name="Asoc_code_succCodes" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.code" Multiplicity="1" Role="FromRole_Asoc_code_succCodes"/>
+                <End Type="DATRAIN.BC_SRV.code" Multiplicity="*" Role="ToRole_Asoc_code_succCodes"/>
+            </Association>
+            <Association Name="Asoc_filterKat_filter" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.filterCategory" Multiplicity="1" Role="FromRole_Asoc_filterKat_filter"/>
+                <End Type="DATRAIN.BC_SRV.filter" Multiplicity="*" Role="ToRole_Asoc_filterKat_filter"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Asoc_filterKat_filter">
+                        <PropertyRef Name="applicationId"/>
+                        <PropertyRef Name="id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Asoc_filterKat_filter">
+                        <PropertyRef Name="applicationId"/>
+                        <PropertyRef Name="categoryId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Asoc_filterKat_screens" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.filterCategory" Multiplicity="1" Role="FromRole_Asoc_filterKat_screens"/>
+                <End Type="DATRAIN.BC_SRV.screen" Multiplicity="*" Role="ToRole_Asoc_filterKat_screens"/>
+            </Association>
+            <Association Name="Asoc_defLetter_activities" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.deficiencyLetterMeta" Multiplicity="1" Role="FromRole_Asoc_defLetter_activities"/>
+                <End Type="DATRAIN.BC_SRV.activity" Multiplicity="*" Role="ToRole_Asoc_defLetter_activities"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Asoc_defLetter_activities">
+                        <PropertyRef Name="applicationId"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Asoc_defLetter_activities">
+                        <PropertyRef Name="applicationId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Asoc_notiftype_codes" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.notificationType" Multiplicity="1" Role="FromRole_Asoc_notiftype_codes"/>
+                <End Type="DATRAIN.BC_SRV.code" Multiplicity="*" Role="ToRole_Asoc_notiftype_codes"/>
+            </Association>
+            <Association Name="Asoc_material_fields" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.material" Multiplicity="1" Role="FromRole_Asoc_material_fields"/>
+                <End Type="DATRAIN.BC_SRV.materialField" Multiplicity="*" Role="ToRole_Asoc_material_fields"/>
+            </Association>
+            <Association Name="Asoc_activity_parv" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.activity" Multiplicity="1" Role="FromRole_Asoc_activity_parv"/>
+                <End Type="DATRAIN.BC_SRV.parameter" Multiplicity="*" Role="ToRole_Asoc_activity_parv"/>
+            </Association>
+            <Association Name="Asoc_activity_fields" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.activity" Multiplicity="1" Role="FromRole_Asoc_activity_fields"/>
+                <End Type="DATRAIN.BC_SRV.field" Multiplicity="*" Role="ToRole_Asoc_activity_fields"/>
+            </Association>
+            <Association Name="Asoc_notifHistory_parv" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.notificationHistory" Multiplicity="1" Role="FromRole_Asoc_notifHistory_parv"/>
+                <End Type="DATRAIN.BC_SRV.notificationHistoryParv" Multiplicity="*" Role="ToRole_Asoc_notifHistory_parv"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Asoc_notifHistory_parv">
+                        <PropertyRef Name="id"/>
+                        <PropertyRef Name="codeId"/>
+                        <PropertyRef Name="notificationId"/>
+                        <PropertyRef Name="applicationId"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Asoc_notifHistory_parv">
+                        <PropertyRef Name="manuId"/>
+                        <PropertyRef Name="codeId"/>
+                        <PropertyRef Name="notificationId"/>
+                        <PropertyRef Name="applicationId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Asoc_tenant_contract" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.tenant" Multiplicity="1" Role="FromRole_Asoc_tenant_contract"/>
+                <End Type="DATRAIN.BC_SRV.contract" Multiplicity="*" Role="ToRole_Asoc_tenant_contract"/>
+            </Association>
+            <Association Name="Asoc_tenant_notifications" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.tenant" Multiplicity="1" Role="FromRole_Asoc_tenant_notifications"/>
+                <End Type="DATRAIN.BC_SRV.notif" Multiplicity="*" Role="ToRole_Asoc_tenant_notifications"/>
+            </Association>
+            <Association Name="Asoc_materialFieldProp_dropDown" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.materialFieldProperty" Multiplicity="1" Role="FromRole_Asoc_materialFieldProp_dropDown"/>
+                <End Type="DATRAIN.BC_SRV.selectOption" Multiplicity="*" Role="ToRole_Asoc_materialFieldProp_dropDown"/>
+            </Association>
+            <Association Name="Asoc_file_content" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.file" Multiplicity="1" Role="FromRole_Asoc_file_content"/>
+                <End Type="DATRAIN.BC_SRV.fileContent" Multiplicity="1" Role="ToRole_Asoc_file_content"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Asoc_file_content">
+                        <PropertyRef Name="id"/>
+                        <PropertyRef Name="referenceId"/>
+                        <PropertyRef Name="applicationId"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Asoc_file_content">
+                        <PropertyRef Name="id"/>
+                        <PropertyRef Name="referenceId"/>
+                        <PropertyRef Name="applicationId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Asoc_meta_notiftype" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.metaData" Multiplicity="1" Role="FromRole_Asoc_meta_notiftype"/>
+                <End Type="DATRAIN.BC_SRV.notificationType" Multiplicity="*" Role="ToRole_Asoc_meta_notiftype"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Asoc_meta_notiftype">
+                        <PropertyRef Name="applicationId"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Asoc_meta_notiftype">
+                        <PropertyRef Name="applicationId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Asoc_meta_tabs" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.metaData" Multiplicity="1" Role="FromRole_Asoc_meta_tabs"/>
+                <End Type="DATRAIN.BC_SRV.tab" Multiplicity="*" Role="ToRole_Asoc_meta_tabs"/>
+            </Association>
+            <Association Name="Asoc_meta_parv" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.metaData" Multiplicity="1" Role="FromRole_Asoc_meta_parv"/>
+                <End Type="DATRAIN.BC_SRV.parameter" Multiplicity="*" Role="ToRole_Asoc_meta_parv"/>
+            </Association>
+            <Association Name="Asoc_meta_activities" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.metaData" Multiplicity="1" Role="FromRole_Asoc_meta_activities"/>
+                <End Type="DATRAIN.BC_SRV.activity" Multiplicity="*" Role="ToRole_Asoc_meta_activities"/>
+            </Association>
+            <Association Name="Asoc_meta_defLetter" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.metaData" Multiplicity="1" Role="FromRole_Asoc_meta_defLetter"/>
+                <End Type="DATRAIN.BC_SRV.deficiencyLetterMeta" Multiplicity="0..1" Role="ToRole_Asoc_meta_defLetter"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Asoc_meta_defLetter">
+                        <PropertyRef Name="applicationId"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Asoc_meta_defLetter">
+                        <PropertyRef Name="applicationId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Asoc_contract_notif" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.contract" Multiplicity="1" Role="FromRole_Asoc_contract_notif"/>
+                <End Type="DATRAIN.BC_SRV.notif" Multiplicity="*" Role="ToRole_Asoc_contract_notif"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Asoc_contract_notif">
+                        <PropertyRef Name="id"/>
+                        <PropertyRef Name="applicationId"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Asoc_contract_notif">
+                        <PropertyRef Name="contractId"/>
+                        <PropertyRef Name="applicationId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Asoc_contract_tenant" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.contract" Multiplicity="1" Role="FromRole_Asoc_contract_tenant"/>
+                <End Type="DATRAIN.BC_SRV.tenant" Multiplicity="*" Role="ToRole_Asoc_contract_tenant"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Asoc_contract_tenant">
+                        <PropertyRef Name="applicationId"/>
+                        <PropertyRef Name="id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Asoc_contract_tenant">
+                        <PropertyRef Name="applicationId"/>
+                        <PropertyRef Name="contractId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Asoc_screen_fields" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.screen" Multiplicity="1" Role="FromRole_Asoc_screen_fields"/>
+                <End Type="DATRAIN.BC_SRV.field" Multiplicity="*" Role="ToRole_Asoc_screen_fields"/>
+            </Association>
+            <Association Name="Asoc_tile_quicklinks" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.tile" Multiplicity="1" Role="FromRole_Asoc_tile_quicklinks"/>
+                <End Type="DATRAIN.BC_SRV.quicklink" Multiplicity="*" Role="ToRole_Asoc_tile_quicklinks"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Asoc_tile_quicklinks">
+                        <PropertyRef Name="id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Asoc_tile_quicklinks">
+                        <PropertyRef Name="tileId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Asoc_tile_addFields" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.tile" Multiplicity="1" Role="FromRole_Asoc_tile_addFields"/>
+                <End Type="DATRAIN.BC_SRV.parameter" Multiplicity="*" Role="ToRole_Asoc_tile_addFields"/>
+            </Association>
+            <Association Name="Asoc_tile_subtiles" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.tile" Multiplicity="1" Role="FromRole_Asoc_tile_subtiles"/>
+                <End Type="DATRAIN.BC_SRV.subtile" Multiplicity="*" Role="ToRole_Asoc_tile_subtiles"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Asoc_tile_subtiles">
+                        <PropertyRef Name="id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Asoc_tile_subtiles">
+                        <PropertyRef Name="parentTask"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Asoc_notif_property" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.notif" Multiplicity="*" Role="FromRole_Asoc_notif_property"/>
+                <End Type="DATRAIN.BC_SRV.property" Multiplicity="0..1" Role="ToRole_Asoc_notif_property"/>
+            </Association>
+            <Association Name="Asoc_notif_functionalLocation" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.notif" Multiplicity="*" Role="FromRole_Asoc_notif_functionalLocation"/>
+                <End Type="DATRAIN.BC_SRV.functionalLocation" Multiplicity="1" Role="ToRole_Asoc_notif_functionalLocation"/>
+            </Association>
+            <Association Name="Asoc_notif_contract" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.notif" Multiplicity="*" Role="FromRole_Asoc_notif_contract"/>
+                <End Type="DATRAIN.BC_SRV.contract" Multiplicity="0..1" Role="ToRole_Asoc_notif_contract"/>
+            </Association>
+            <Association Name="Asoc_notif_tenants" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.notif" Multiplicity="*" Role="FromRole_Asoc_notif_tenants"/>
+                <End Type="DATRAIN.BC_SRV.tenant" Multiplicity="*" Role="ToRole_Asoc_notif_tenants"/>
+            </Association>
+            <Association Name="Asoc_notif_source" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.notif" Multiplicity="1" Role="FromRole_Asoc_notif_source"/>
+                <End Type="DATRAIN.BC_SRV.notif" Multiplicity="0..1" Role="ToRole_Asoc_notif_source"/>
+            </Association>
+            <Association Name="Asoc_notif_target" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.notif" Multiplicity="1" Role="FromRole_Asoc_notif_target"/>
+                <End Type="DATRAIN.BC_SRV.notif" Multiplicity="*" Role="ToRole_Asoc_notif_target"/>
+            </Association>
+            <Association Name="Asoc_notif_issuer" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.notif" Multiplicity="*" Role="FromRole_Asoc_notif_issuer"/>
+                <End Type="DATRAIN.BC_SRV.partner" Multiplicity="0..1" Role="ToRole_Asoc_notif_issuer"/>
+            </Association>
+            <Association Name="Asoc_notif_documents" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.notif" Multiplicity="1" Role="FromRole_Asoc_notif_documents"/>
+                <End Type="DATRAIN.BC_SRV.file" Multiplicity="*" Role="ToRole_Asoc_notif_documents"/>
+            </Association>
+            <Association Name="Asoc_notif_history" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.notif" Multiplicity="1" Role="FromRole_Asoc_notif_history"/>
+                <End Type="DATRAIN.BC_SRV.notificationHistory" Multiplicity="*" Role="ToRole_Asoc_notif_history"/>
+            </Association>
+            <Association Name="Asoc_notif_vendor" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.notif" Multiplicity="1" Role="FromRole_Asoc_notif_vendor"/>
+                <End Type="DATRAIN.BC_SRV.vendor" Multiplicity="0..1" Role="ToRole_Asoc_notif_vendor"/>
+            </Association>
+            <Association Name="Asoc_issuer_notif" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.partner" Multiplicity="0..1" Role="FromRole_Asoc_issuer_notif"/>
+                <End Type="DATRAIN.BC_SRV.notif" Multiplicity="*" Role="ToRole_Asoc_issuer_notif"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Asoc_issuer_notif">
+                        <PropertyRef Name="id"/>
+                        <PropertyRef Name="applicationId"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Asoc_issuer_notif">
+                        <PropertyRef Name="issuerId"/>
+                        <PropertyRef Name="applicationId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Asoc_property_notif" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.property" Multiplicity="1" Role="FromRole_Asoc_property_notif"/>
+                <End Type="DATRAIN.BC_SRV.notif" Multiplicity="*" Role="ToRole_Asoc_property_notif"/>
+            </Association>
+            <Association Name="Asoc_property_functionalLocation" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.property" Multiplicity="1" Role="FromRole_Asoc_property_functionalLocation"/>
+                <End Type="DATRAIN.BC_SRV.functionalLocation" Multiplicity="1" Role="ToRole_Asoc_property_functionalLocation"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Asoc_property_functionalLocation">
+                        <PropertyRef Name="applicationId"/>
+                        <PropertyRef Name="id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Asoc_property_functionalLocation">
+                        <PropertyRef Name="applicationId"/>
+                        <PropertyRef Name="propertyId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Asoc_assembly_fields" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.assembly" Multiplicity="1" Role="FromRole_Asoc_assembly_fields"/>
+                <End Type="DATRAIN.BC_SRV.materialField" Multiplicity="*" Role="ToRole_Asoc_assembly_fields"/>
+            </Association>
+            <Association Name="Asoc_materialField_properties" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.materialField" Multiplicity="1" Role="FromRole_Asoc_materialField_properties"/>
+                <End Type="DATRAIN.BC_SRV.materialFieldProperty" Multiplicity="1" Role="ToRole_Asoc_materialField_properties"/>
+            </Association>
+            <Association Name="Asoc_field_dropDowns" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.field" Multiplicity="1" Role="FromRole_Asoc_field_dropDowns"/>
+                <End Type="DATRAIN.BC_SRV.selectOption" Multiplicity="*" Role="ToRole_Asoc_field_dropDowns"/>
+            </Association>
+            <Association Name="Asoc_functionalLocation_notif" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.functionalLocation" Multiplicity="1" Role="FromRole_Asoc_functionalLocation_notif"/>
+                <End Type="DATRAIN.BC_SRV.notif" Multiplicity="*" Role="ToRole_Asoc_functionalLocation_notif"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Asoc_functionalLocation_notif">
+                        <PropertyRef Name="id"/>
+                        <PropertyRef Name="applicationId"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Asoc_functionalLocation_notif">
+                        <PropertyRef Name="functionalLocationId"/>
+                        <PropertyRef Name="applicationId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Asoc_functionalLocation_property" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.functionalLocation" Multiplicity="1" Role="FromRole_Asoc_functionalLocation_property"/>
+                <End Type="DATRAIN.BC_SRV.property" Multiplicity="0..1" Role="ToRole_Asoc_functionalLocation_property"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Asoc_functionalLocation_property">
+                        <PropertyRef Name="id"/>
+                        <PropertyRef Name="applicationId"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Asoc_functionalLocation_property">
+                        <PropertyRef Name="functionalLocationId"/>
+                        <PropertyRef Name="applicationId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Asoc_functionalLocation_children" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.functionalLocation" Multiplicity="1" Role="FromRole_Asoc_functionalLocation_children"/>
+                <End Type="DATRAIN.BC_SRV.functionalLocation" Multiplicity="*" Role="ToRole_Asoc_functionalLocation_children"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Asoc_functionalLocation_children">
+                        <PropertyRef Name="id"/>
+                        <PropertyRef Name="applicationId"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Asoc_functionalLocation_children">
+                        <PropertyRef Name="parentiId"/>
+                        <PropertyRef Name="applicationId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Asoc_functionalLocation_parent" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.functionalLocation" Multiplicity="*" Role="FromRole_Asoc_functionalLocation_parent"/>
+                <End Type="DATRAIN.BC_SRV.functionalLocation" Multiplicity="0..1" Role="ToRole_Asoc_functionalLocation_parent"/>
+            </Association>
+            <Association Name="Asoc_functionalLocation_material" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.functionalLocation" Multiplicity="1" Role="FromRole_Asoc_functionalLocation_material"/>
+                <End Type="DATRAIN.BC_SRV.material" Multiplicity="*" Role="ToRole_Asoc_functionalLocation_material"/>
+            </Association>
+            <Association Name="Asoc_functionalLocation_path" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.functionalLocation" Multiplicity="1" Role="FromRole_Asoc_functionalLocation_path"/>
+                <End Type="DATRAIN.BC_SRV.functionalLocationPath" Multiplicity="*" Role="ToRole_Asoc_functionalLocation_path"/>
+            </Association>
+            <Association Name="Asoc_functionalLocation_geoCords" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.functionalLocation" Multiplicity="1" Role="FromRole_Asoc_functionalLocation_geoCords"/>
+                <End Type="DATRAIN.BC_SRV.subGeoCoordinate" Multiplicity="*" Role="ToRole_Asoc_functionalLocation_geoCords"/>
+            </Association>
+            <Association Name="Asoc_functionalLocation_address" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.functionalLocation" Multiplicity="1" Role="FromRole_Asoc_functionalLocation_address"/>
+                <End Type="DATRAIN.BC_SRV.subAddress" Multiplicity="*" Role="ToRole_Asoc_functionalLocation_address"/>
+            </Association>
+            <Association Name="Asoc_functionalLocation_assembly" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.functionalLocation" Multiplicity="1" Role="FromRole_Asoc_functionalLocation_assembly"/>
+                <End Type="DATRAIN.BC_SRV.assembly" Multiplicity="*" Role="ToRole_Asoc_functionalLocation_assembly"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Asoc_functionalLocation_assembly">
+                        <PropertyRef Name="applicationId"/>
+                        <PropertyRef Name="id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Asoc_functionalLocation_assembly">
+                        <PropertyRef Name="applicationId"/>
+                        <PropertyRef Name="functionalLocationId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Asoc_user_vendor" sap:content-version="1">
+                <End Type="DATRAIN.BC_SRV.user" Multiplicity="1" Role="FromRole_Asoc_user_vendor"/>
+                <End Type="DATRAIN.BC_SRV.vendor" Multiplicity="0..1" Role="ToRole_Asoc_user_vendor"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Asoc_user_vendor">
+                        <PropertyRef Name="id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Asoc_user_vendor">
+                        <PropertyRef Name="userId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="DATRAIN_BC_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="properties" EntityType="DATRAIN.BC_SRV.property" sap:label="Anzeigen/�ndern" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="functionalLocations" EntityType="DATRAIN.BC_SRV.functionalLocation" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="subFunctionalLocations" EntityType="DATRAIN.BC_SRV.functionalLocation" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="parentFunctionalLocation" EntityType="DATRAIN.BC_SRV.functionalLocation" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="contracts" EntityType="DATRAIN.BC_SRV.contract" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="tenants" EntityType="DATRAIN.BC_SRV.tenant" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="applications" EntityType="DATRAIN.BC_SRV.application" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="issuer" EntityType="DATRAIN.BC_SRV.partner" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="codesMetadata" EntityType="DATRAIN.BC_SRV.code" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="succCodeMetadata" EntityType="DATRAIN.BC_SRV.code" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="notifTypeStatusCodes" EntityType="DATRAIN.BC_SRV.code" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="notifTypeStatusCodesFollow" EntityType="DATRAIN.BC_SRV.code" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="codes" EntityType="DATRAIN.BC_SRV.code" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="addFieldsTile" EntityType="DATRAIN.BC_SRV.parameter" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="metadataParv" EntityType="DATRAIN.BC_SRV.parameter" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="activityParv" EntityType="DATRAIN.BC_SRV.parameter" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="parameters" EntityType="DATRAIN.BC_SRV.parameter" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="materials" EntityType="DATRAIN.BC_SRV.material" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="functionalLocationPath" EntityType="DATRAIN.BC_SRV.functionalLocationPath" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="geoCoordinates" EntityType="DATRAIN.BC_SRV.subGeoCoordinate" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="subAddresses" EntityType="DATRAIN.BC_SRV.subAddress" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="assemblies" EntityType="DATRAIN.BC_SRV.assembly" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="materialFields" EntityType="DATRAIN.BC_SRV.materialField" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="materialFieldProp" EntityType="DATRAIN.BC_SRV.materialFieldProperty" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="matfieldDropDown" EntityType="DATRAIN.BC_SRV.selectOption" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="fieldDropDown" EntityType="DATRAIN.BC_SRV.selectOption" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="files" EntityType="DATRAIN.BC_SRV.file" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="fileContent" EntityType="DATRAIN.BC_SRV.fileContent" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="metaData" EntityType="DATRAIN.BC_SRV.metaData" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="notificationTypes" EntityType="DATRAIN.BC_SRV.notificationType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="tabs" EntityType="DATRAIN.BC_SRV.tab" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="codeOrders" EntityType="DATRAIN.BC_SRV.codeOrder" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="activities" EntityType="DATRAIN.BC_SRV.activity" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="user" EntityType="DATRAIN.BC_SRV.user" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="vendor" EntityType="DATRAIN.BC_SRV.vendor" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="deficiencyLetterMeta" EntityType="DATRAIN.BC_SRV.deficiencyLetterMeta" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="filterCategories" EntityType="DATRAIN.BC_SRV.filterCategory" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="filters" EntityType="DATRAIN.BC_SRV.filter" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="screens" EntityType="DATRAIN.BC_SRV.screen" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="filterValues" EntityType="DATRAIN.BC_SRV.filterValue" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="notificationHistory" EntityType="DATRAIN.BC_SRV.notificationHistory" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="notificationHistoryParv" EntityType="DATRAIN.BC_SRV.notificationHistoryParv" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="notifications" EntityType="DATRAIN.BC_SRV.notif" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="sourceNotification" EntityType="DATRAIN.BC_SRV.notif" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="followUpNotifications" EntityType="DATRAIN.BC_SRV.notif" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="quicklinks" EntityType="DATRAIN.BC_SRV.quicklink" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="activityFields" EntityType="DATRAIN.BC_SRV.field" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="fields" EntityType="DATRAIN.BC_SRV.field" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="tiles" EntityType="DATRAIN.BC_SRV.tile" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="subtiles" EntityType="DATRAIN.BC_SRV.subtile" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="Asoc_notifTypeStatusCodesFol_orders" Association="DATRAIN.BC_SRV.Asoc_code_codeOrder" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="notifTypeStatusCodesFollow" Role="FromRole_Asoc_code_codeOrder"/>
+                    <End EntitySet="codeOrders" Role="ToRole_Asoc_code_codeOrder"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_meta_defLetter" Association="DATRAIN.BC_SRV.Asoc_meta_defLetter" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="metaData" Role="FromRole_Asoc_meta_defLetter"/>
+                    <End EntitySet="deficiencyLetterMeta" Role="ToRole_Asoc_meta_defLetter"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_issuer_notifs" Association="DATRAIN.BC_SRV.Asoc_issuer_notif" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="issuer" Role="FromRole_Asoc_issuer_notif"/>
+                    <End EntitySet="notifications" Role="ToRole_Asoc_issuer_notif"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_subFunctionalLocation_geoCords" Association="DATRAIN.BC_SRV.Asoc_functionalLocation_geoCords" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="subFunctionalLocations" Role="FromRole_Asoc_functionalLocation_geoCords"/>
+                    <End EntitySet="geoCoordinates" Role="ToRole_Asoc_functionalLocation_geoCords"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_subFunctionalLocation_assemblies" Association="DATRAIN.BC_SRV.Asoc_functionalLocation_assembly" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="subFunctionalLocations" Role="FromRole_Asoc_functionalLocation_assembly"/>
+                    <End EntitySet="assemblies" Role="ToRole_Asoc_functionalLocation_assembly"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_target_source" Association="DATRAIN.BC_SRV.Asoc_notif_source" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="followUpNotifications" Role="FromRole_Asoc_notif_source"/>
+                    <End EntitySet="sourceNotification" Role="ToRole_Asoc_notif_source"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_parentFunctionalLocation_addresses" Association="DATRAIN.BC_SRV.Asoc_functionalLocation_address" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="parentFunctionalLocation" Role="FromRole_Asoc_functionalLocation_address"/>
+                    <End EntitySet="subAddresses" Role="ToRole_Asoc_functionalLocation_address"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_target_vendor" Association="DATRAIN.BC_SRV.Asoc_notif_vendor" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="followUpNotifications" Role="FromRole_Asoc_notif_vendor"/>
+                    <End EntitySet="vendor" Role="ToRole_Asoc_notif_vendor"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_functionalLocation_path" Association="DATRAIN.BC_SRV.Asoc_functionalLocation_path" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="functionalLocations" Role="FromRole_Asoc_functionalLocation_path"/>
+                    <End EntitySet="functionalLocationPath" Role="ToRole_Asoc_functionalLocation_path"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_notif_source" Association="DATRAIN.BC_SRV.Asoc_notif_source" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="notifications" Role="FromRole_Asoc_notif_source"/>
+                    <End EntitySet="sourceNotification" Role="ToRole_Asoc_notif_source"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_subFunctionalLocation_notifs" Association="DATRAIN.BC_SRV.Asoc_functionalLocation_notif" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="subFunctionalLocations" Role="FromRole_Asoc_functionalLocation_notif"/>
+                    <End EntitySet="notifications" Role="ToRole_Asoc_functionalLocation_notif"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_filter_values" Association="DATRAIN.BC_SRV.Asoc_filter_values" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="filters" Role="FromRole_Asoc_filter_values"/>
+                    <End EntitySet="filterValues" Role="ToRole_Asoc_filter_values"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_tenant_contracts" Association="DATRAIN.BC_SRV.Asoc_tenant_contract" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="tenants" Role="FromRole_Asoc_tenant_contract"/>
+                    <End EntitySet="contracts" Role="ToRole_Asoc_tenant_contract"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_meta_notiftypes" Association="DATRAIN.BC_SRV.Asoc_meta_notiftype" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="metaData" Role="FromRole_Asoc_meta_notiftype"/>
+                    <End EntitySet="notificationTypes" Role="ToRole_Asoc_meta_notiftype"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_screenfield_dropDowns" Association="DATRAIN.BC_SRV.Asoc_field_dropDowns" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="fields" Role="FromRole_Asoc_field_dropDowns"/>
+                    <End EntitySet="fieldDropDown" Role="ToRole_Asoc_field_dropDowns"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_functionalLocation_parent" Association="DATRAIN.BC_SRV.Asoc_functionalLocation_parent" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="functionalLocations" Role="FromRole_Asoc_functionalLocation_parent"/>
+                    <End EntitySet="parentFunctionalLocation" Role="ToRole_Asoc_functionalLocation_parent"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_subFunctionalLocation_children" Association="DATRAIN.BC_SRV.Asoc_functionalLocation_children" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="subFunctionalLocations" Role="FromRole_Asoc_functionalLocation_children"/>
+                    <End EntitySet="subFunctionalLocations" Role="ToRole_Asoc_functionalLocation_children"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_functionalLocation_geoCords" Association="DATRAIN.BC_SRV.Asoc_functionalLocation_geoCords" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="functionalLocations" Role="FromRole_Asoc_functionalLocation_geoCords"/>
+                    <End EntitySet="geoCoordinates" Role="ToRole_Asoc_functionalLocation_geoCords"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_notif_targets" Association="DATRAIN.BC_SRV.Asoc_notif_target" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="notifications" Role="FromRole_Asoc_notif_target"/>
+                    <End EntitySet="followUpNotifications" Role="ToRole_Asoc_notif_target"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_functionalLocation_children" Association="DATRAIN.BC_SRV.Asoc_functionalLocation_children" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="functionalLocations" Role="FromRole_Asoc_functionalLocation_children"/>
+                    <End EntitySet="subFunctionalLocations" Role="ToRole_Asoc_functionalLocation_children"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_parentFunctionalLocation_geoCords" Association="DATRAIN.BC_SRV.Asoc_functionalLocation_geoCords" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="parentFunctionalLocation" Role="FromRole_Asoc_functionalLocation_geoCords"/>
+                    <End EntitySet="geoCoordinates" Role="ToRole_Asoc_functionalLocation_geoCords"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_parentFunctionalLocation_path" Association="DATRAIN.BC_SRV.Asoc_functionalLocation_path" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="parentFunctionalLocation" Role="FromRole_Asoc_functionalLocation_path"/>
+                    <End EntitySet="functionalLocationPath" Role="ToRole_Asoc_functionalLocation_path"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_target_notif" Association="DATRAIN.BC_SRV.Asoc_notif_target" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="followUpNotifications" Role="FromRole_Asoc_notif_target"/>
+                    <End EntitySet="notifications" Role="ToRole_Asoc_notif_target"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_file_content" Association="DATRAIN.BC_SRV.Asoc_file_content" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="files" Role="FromRole_Asoc_file_content"/>
+                    <End EntitySet="fileContent" Role="ToRole_Asoc_file_content"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_materialField_properties" Association="DATRAIN.BC_SRV.Asoc_materialField_properties" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="materialFields" Role="FromRole_Asoc_materialField_properties"/>
+                    <End EntitySet="materialFieldProp" Role="ToRole_Asoc_materialField_properties"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_target_tenants" Association="DATRAIN.BC_SRV.Asoc_notif_tenants" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="followUpNotifications" Role="FromRole_Asoc_notif_tenants"/>
+                    <End EntitySet="tenants" Role="ToRole_Asoc_notif_tenants"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_property_notifs" Association="DATRAIN.BC_SRV.Asoc_property_notif" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="properties" Role="FromRole_Asoc_property_notif"/>
+                    <End EntitySet="notifications" Role="ToRole_Asoc_property_notif"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_activity_parv" Association="DATRAIN.BC_SRV.Asoc_activity_parv" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="activities" Role="FromRole_Asoc_activity_parv"/>
+                    <End EntitySet="activityParv" Role="ToRole_Asoc_activity_parv"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_user_vendor" Association="DATRAIN.BC_SRV.Asoc_user_vendor" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="user" Role="FromRole_Asoc_user_vendor"/>
+                    <End EntitySet="vendor" Role="ToRole_Asoc_user_vendor"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_target_functionalLocations" Association="DATRAIN.BC_SRV.Asoc_notif_functionalLocation" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="followUpNotifications" Role="FromRole_Asoc_notif_functionalLocation"/>
+                    <End EntitySet="functionalLocations" Role="ToRole_Asoc_notif_functionalLocation"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_parentFunctionalLocation_properties" Association="DATRAIN.BC_SRV.Asoc_functionalLocation_property" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="parentFunctionalLocation" Role="FromRole_Asoc_functionalLocation_property"/>
+                    <End EntitySet="properties" Role="ToRole_Asoc_functionalLocation_property"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_source_property" Association="DATRAIN.BC_SRV.Asoc_notif_property" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="sourceNotification" Role="FromRole_Asoc_notif_property"/>
+                    <End EntitySet="properties" Role="ToRole_Asoc_notif_property"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_notifType_codes" Association="DATRAIN.BC_SRV.Asoc_notiftype_codes" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="notificationTypes" Role="FromRole_Asoc_notiftype_codes"/>
+                    <End EntitySet="codes" Role="ToRole_Asoc_notiftype_codes"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_code_codeOrder" Association="DATRAIN.BC_SRV.Asoc_code_codeOrder" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="codes" Role="FromRole_Asoc_code_codeOrder"/>
+                    <End EntitySet="codeOrders" Role="ToRole_Asoc_code_codeOrder"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_source_issuer" Association="DATRAIN.BC_SRV.Asoc_notif_issuer" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="sourceNotification" Role="FromRole_Asoc_notif_issuer"/>
+                    <End EntitySet="issuer" Role="ToRole_Asoc_notif_issuer"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_subFunctionalLocation_addresses" Association="DATRAIN.BC_SRV.Asoc_functionalLocation_address" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="subFunctionalLocations" Role="FromRole_Asoc_functionalLocation_address"/>
+                    <End EntitySet="subAddresses" Role="ToRole_Asoc_functionalLocation_address"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_source_documents" Association="DATRAIN.BC_SRV.Asoc_notif_documents" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="sourceNotification" Role="FromRole_Asoc_notif_documents"/>
+                    <End EntitySet="files" Role="ToRole_Asoc_notif_documents"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_tenant_notifications" Association="DATRAIN.BC_SRV.Asoc_tenant_notifications" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="tenants" Role="FromRole_Asoc_tenant_notifications"/>
+                    <End EntitySet="notifications" Role="ToRole_Asoc_tenant_notifications"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_notifTCodes_followUp" Association="DATRAIN.BC_SRV.Asoc_code_succCodes" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="notifTypeStatusCodes" Role="FromRole_Asoc_code_succCodes"/>
+                    <End EntitySet="notifTypeStatusCodesFollow" Role="ToRole_Asoc_code_succCodes"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_source_history" Association="DATRAIN.BC_SRV.Asoc_notif_history" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="sourceNotification" Role="FromRole_Asoc_notif_history"/>
+                    <End EntitySet="notificationHistory" Role="ToRole_Asoc_notif_history"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_source_contracts" Association="DATRAIN.BC_SRV.Asoc_notif_contract" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="sourceNotification" Role="FromRole_Asoc_notif_contract"/>
+                    <End EntitySet="contracts" Role="ToRole_Asoc_notif_contract"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_notif_properties" Association="DATRAIN.BC_SRV.Asoc_notif_property" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="notifications" Role="FromRole_Asoc_notif_property"/>
+                    <End EntitySet="properties" Role="ToRole_Asoc_notif_property"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_material_fields" Association="DATRAIN.BC_SRV.Asoc_material_fields" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="materials" Role="FromRole_Asoc_material_fields"/>
+                    <End EntitySet="materialFields" Role="ToRole_Asoc_material_fields"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_notifHistory_parv" Association="DATRAIN.BC_SRV.Asoc_notifHistory_parv" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="notificationHistory" Role="FromRole_Asoc_notifHistory_parv"/>
+                    <End EntitySet="notificationHistoryParv" Role="ToRole_Asoc_notifHistory_parv"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_functionalLocation_materials" Association="DATRAIN.BC_SRV.Asoc_functionalLocation_material" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="functionalLocations" Role="FromRole_Asoc_functionalLocation_material"/>
+                    <End EntitySet="materials" Role="ToRole_Asoc_functionalLocation_material"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_screen_fields" Association="DATRAIN.BC_SRV.Asoc_screen_fields" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="screens" Role="FromRole_Asoc_screen_fields"/>
+                    <End EntitySet="fields" Role="ToRole_Asoc_screen_fields"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_codes_parv" Association="DATRAIN.BC_SRV.Asoc_code_parv" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="codes" Role="FromRole_Asoc_code_parv"/>
+                    <End EntitySet="parameters" Role="ToRole_Asoc_code_parv"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_source_notif" Association="DATRAIN.BC_SRV.Asoc_notif_source" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="sourceNotification" Role="FromRole_Asoc_notif_source"/>
+                    <End EntitySet="notifications" Role="ToRole_Asoc_notif_source"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_property_functionalLocations" Association="DATRAIN.BC_SRV.Asoc_property_functionalLocation" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="properties" Role="FromRole_Asoc_property_functionalLocation"/>
+                    <End EntitySet="functionalLocations" Role="ToRole_Asoc_property_functionalLocation"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_filterKat_screens" Association="DATRAIN.BC_SRV.Asoc_filterKat_screens" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="filterCategories" Role="FromRole_Asoc_filterKat_screens"/>
+                    <End EntitySet="screens" Role="ToRole_Asoc_filterKat_screens"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_activityfield_dropDowns" Association="DATRAIN.BC_SRV.Asoc_field_dropDowns" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="activityFields" Role="FromRole_Asoc_field_dropDowns"/>
+                    <End EntitySet="fieldDropDown" Role="ToRole_Asoc_field_dropDowns"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_parentFunctionalLocation_assemblies" Association="DATRAIN.BC_SRV.Asoc_functionalLocation_assembly" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="parentFunctionalLocation" Role="FromRole_Asoc_functionalLocation_assembly"/>
+                    <End EntitySet="assemblies" Role="ToRole_Asoc_functionalLocation_assembly"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_meta_activities" Association="DATRAIN.BC_SRV.Asoc_meta_activities" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="metaData" Role="FromRole_Asoc_meta_activities"/>
+                    <End EntitySet="activities" Role="ToRole_Asoc_meta_activities"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_assembly_fields" Association="DATRAIN.BC_SRV.Asoc_assembly_fields" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="assemblies" Role="FromRole_Asoc_assembly_fields"/>
+                    <End EntitySet="materialFields" Role="ToRole_Asoc_assembly_fields"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_contract_tenants" Association="DATRAIN.BC_SRV.Asoc_contract_tenant" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="contracts" Role="FromRole_Asoc_contract_tenant"/>
+                    <End EntitySet="tenants" Role="ToRole_Asoc_contract_tenant"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_parentFunctionalLocation_children" Association="DATRAIN.BC_SRV.Asoc_functionalLocation_children" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="parentFunctionalLocation" Role="FromRole_Asoc_functionalLocation_children"/>
+                    <End EntitySet="subFunctionalLocations" Role="ToRole_Asoc_functionalLocation_children"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_notif_history" Association="DATRAIN.BC_SRV.Asoc_notif_history" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="notifications" Role="FromRole_Asoc_notif_history"/>
+                    <End EntitySet="notificationHistory" Role="ToRole_Asoc_notif_history"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_notif_vendor" Association="DATRAIN.BC_SRV.Asoc_notif_vendor" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="notifications" Role="FromRole_Asoc_notif_vendor"/>
+                    <End EntitySet="vendor" Role="ToRole_Asoc_notif_vendor"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_target_contracts" Association="DATRAIN.BC_SRV.Asoc_notif_contract" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="followUpNotifications" Role="FromRole_Asoc_notif_contract"/>
+                    <End EntitySet="contracts" Role="ToRole_Asoc_notif_contract"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_meta_parv" Association="DATRAIN.BC_SRV.Asoc_meta_parv" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="metaData" Role="FromRole_Asoc_meta_parv"/>
+                    <End EntitySet="parameters" Role="ToRole_Asoc_meta_parv"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_application_notifs" Association="DATRAIN.BC_SRV.Asoc_application_notif" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="applications" Role="FromRole_Asoc_application_notif"/>
+                    <End EntitySet="notifications" Role="ToRole_Asoc_application_notif"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_source_targets" Association="DATRAIN.BC_SRV.Asoc_notif_target" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="sourceNotification" Role="FromRole_Asoc_notif_target"/>
+                    <End EntitySet="followUpNotifications" Role="ToRole_Asoc_notif_target"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_source_tenants" Association="DATRAIN.BC_SRV.Asoc_notif_tenants" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="sourceNotification" Role="FromRole_Asoc_notif_tenants"/>
+                    <End EntitySet="tenants" Role="ToRole_Asoc_notif_tenants"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_subFunctionalLocation_properties" Association="DATRAIN.BC_SRV.Asoc_functionalLocation_property" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="subFunctionalLocations" Role="FromRole_Asoc_functionalLocation_property"/>
+                    <End EntitySet="properties" Role="ToRole_Asoc_functionalLocation_property"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_subFunctionalLocation_materials" Association="DATRAIN.BC_SRV.Asoc_functionalLocation_material" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="subFunctionalLocations" Role="FromRole_Asoc_functionalLocation_material"/>
+                    <End EntitySet="materials" Role="ToRole_Asoc_functionalLocation_material"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_succCode_succCodes" Association="DATRAIN.BC_SRV.Asoc_code_succCodes" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="succCodeMetadata" Role="FromRole_Asoc_code_succCodes"/>
+                    <End EntitySet="succCodeMetadata" Role="ToRole_Asoc_code_succCodes"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_target_documents" Association="DATRAIN.BC_SRV.Asoc_notif_documents" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="followUpNotifications" Role="FromRole_Asoc_notif_documents"/>
+                    <End EntitySet="files" Role="ToRole_Asoc_notif_documents"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_defLetter_activities" Association="DATRAIN.BC_SRV.Asoc_defLetter_activities" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="deficiencyLetterMeta" Role="FromRole_Asoc_defLetter_activities"/>
+                    <End EntitySet="activities" Role="ToRole_Asoc_defLetter_activities"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_subFunctionalLocation_parent" Association="DATRAIN.BC_SRV.Asoc_functionalLocation_parent" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="subFunctionalLocations" Role="FromRole_Asoc_functionalLocation_parent"/>
+                    <End EntitySet="parentFunctionalLocation" Role="ToRole_Asoc_functionalLocation_parent"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_parentFunctionalLocation_materials" Association="DATRAIN.BC_SRV.Asoc_functionalLocation_material" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="parentFunctionalLocation" Role="FromRole_Asoc_functionalLocation_material"/>
+                    <End EntitySet="materials" Role="ToRole_Asoc_functionalLocation_material"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_functionalLocation_properties" Association="DATRAIN.BC_SRV.Asoc_functionalLocation_property" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="functionalLocations" Role="FromRole_Asoc_functionalLocation_property"/>
+                    <End EntitySet="properties" Role="ToRole_Asoc_functionalLocation_property"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_target_history" Association="DATRAIN.BC_SRV.Asoc_notif_history" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="followUpNotifications" Role="FromRole_Asoc_notif_history"/>
+                    <End EntitySet="notificationHistory" Role="ToRole_Asoc_notif_history"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_notif_issuer" Association="DATRAIN.BC_SRV.Asoc_notif_issuer" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="notifications" Role="FromRole_Asoc_notif_issuer"/>
+                    <End EntitySet="issuer" Role="ToRole_Asoc_notif_issuer"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_notif_contracts" Association="DATRAIN.BC_SRV.Asoc_notif_contract" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="notifications" Role="FromRole_Asoc_notif_contract"/>
+                    <End EntitySet="contracts" Role="ToRole_Asoc_notif_contract"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_source_functionalLocations" Association="DATRAIN.BC_SRV.Asoc_notif_functionalLocation" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="sourceNotification" Role="FromRole_Asoc_notif_functionalLocation"/>
+                    <End EntitySet="functionalLocations" Role="ToRole_Asoc_notif_functionalLocation"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_functionalLocation_notifs" Association="DATRAIN.BC_SRV.Asoc_functionalLocation_notif" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="functionalLocations" Role="FromRole_Asoc_functionalLocation_notif"/>
+                    <End EntitySet="notifications" Role="ToRole_Asoc_functionalLocation_notif"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_notif_tenants" Association="DATRAIN.BC_SRV.Asoc_notif_tenants" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="notifications" Role="FromRole_Asoc_notif_tenants"/>
+                    <End EntitySet="tenants" Role="ToRole_Asoc_notif_tenants"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_subFunctionalLocation_path" Association="DATRAIN.BC_SRV.Asoc_functionalLocation_path" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="subFunctionalLocations" Role="FromRole_Asoc_functionalLocation_path"/>
+                    <End EntitySet="functionalLocationPath" Role="ToRole_Asoc_functionalLocation_path"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_tile_addFields" Association="DATRAIN.BC_SRV.Asoc_tile_addFields" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="tiles" Role="FromRole_Asoc_tile_addFields"/>
+                    <End EntitySet="addFieldsTile" Role="ToRole_Asoc_tile_addFields"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_source_vendor" Association="DATRAIN.BC_SRV.Asoc_notif_vendor" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="sourceNotification" Role="FromRole_Asoc_notif_vendor"/>
+                    <End EntitySet="vendor" Role="ToRole_Asoc_notif_vendor"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_code_succCodes" Association="DATRAIN.BC_SRV.Asoc_code_succCodes" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="codes" Role="FromRole_Asoc_code_succCodes"/>
+                    <End EntitySet="codes" Role="ToRole_Asoc_code_succCodes"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_functionalLocation_assemblies" Association="DATRAIN.BC_SRV.Asoc_functionalLocation_assembly" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="functionalLocations" Role="FromRole_Asoc_functionalLocation_assembly"/>
+                    <End EntitySet="assemblies" Role="ToRole_Asoc_functionalLocation_assembly"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_parentFunctionalLocation_notifs" Association="DATRAIN.BC_SRV.Asoc_functionalLocation_notif" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="parentFunctionalLocation" Role="FromRole_Asoc_functionalLocation_notif"/>
+                    <End EntitySet="notifications" Role="ToRole_Asoc_functionalLocation_notif"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_target_issuer" Association="DATRAIN.BC_SRV.Asoc_notif_issuer" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="followUpNotifications" Role="FromRole_Asoc_notif_issuer"/>
+                    <End EntitySet="issuer" Role="ToRole_Asoc_notif_issuer"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_parentFunctionalLocation_parent" Association="DATRAIN.BC_SRV.Asoc_functionalLocation_parent" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="parentFunctionalLocation" Role="FromRole_Asoc_functionalLocation_parent"/>
+                    <End EntitySet="parentFunctionalLocation" Role="ToRole_Asoc_functionalLocation_parent"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_notifTypeStatusCodes_orders" Association="DATRAIN.BC_SRV.Asoc_code_codeOrder" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="notifTypeStatusCodes" Role="FromRole_Asoc_code_codeOrder"/>
+                    <End EntitySet="codeOrders" Role="ToRole_Asoc_code_codeOrder"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_application_functionalLocations" Association="DATRAIN.BC_SRV.Asoc_application_functionalLocation" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="applications" Role="FromRole_Asoc_application_functionalLocation"/>
+                    <End EntitySet="functionalLocations" Role="ToRole_Asoc_application_functionalLocation"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_activity_fields" Association="DATRAIN.BC_SRV.Asoc_activity_fields" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="activities" Role="FromRole_Asoc_activity_fields"/>
+                    <End EntitySet="activityFields" Role="ToRole_Asoc_activity_fields"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_notif_documents" Association="DATRAIN.BC_SRV.Asoc_notif_documents" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="notifications" Role="FromRole_Asoc_notif_documents"/>
+                    <End EntitySet="files" Role="ToRole_Asoc_notif_documents"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_notif_functionalLocations" Association="DATRAIN.BC_SRV.Asoc_notif_functionalLocation" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="notifications" Role="FromRole_Asoc_notif_functionalLocation"/>
+                    <End EntitySet="functionalLocations" Role="ToRole_Asoc_notif_functionalLocation"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_tile_quicklinks" Association="DATRAIN.BC_SRV.Asoc_tile_quicklinks" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="tiles" Role="FromRole_Asoc_tile_quicklinks"/>
+                    <End EntitySet="quicklinks" Role="ToRole_Asoc_tile_quicklinks"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_filterKat_filters" Association="DATRAIN.BC_SRV.Asoc_filterKat_filter" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="filterCategories" Role="FromRole_Asoc_filterKat_filter"/>
+                    <End EntitySet="filters" Role="ToRole_Asoc_filterKat_filter"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_functionalLocation_addresses" Association="DATRAIN.BC_SRV.Asoc_functionalLocation_address" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="functionalLocations" Role="FromRole_Asoc_functionalLocation_address"/>
+                    <End EntitySet="subAddresses" Role="ToRole_Asoc_functionalLocation_address"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_meta_tabs" Association="DATRAIN.BC_SRV.Asoc_meta_tabs" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="metaData" Role="FromRole_Asoc_meta_tabs"/>
+                    <End EntitySet="tabs" Role="ToRole_Asoc_meta_tabs"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_materialFieldProp_dropDowns" Association="DATRAIN.BC_SRV.Asoc_materialFieldProp_dropDown" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="materialFieldProp" Role="FromRole_Asoc_materialFieldProp_dropDown"/>
+                    <End EntitySet="matfieldDropDown" Role="ToRole_Asoc_materialFieldProp_dropDown"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_tile_subtiles" Association="DATRAIN.BC_SRV.Asoc_tile_subtiles" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="tiles" Role="FromRole_Asoc_tile_subtiles"/>
+                    <End EntitySet="subtiles" Role="ToRole_Asoc_tile_subtiles"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_target_properties" Association="DATRAIN.BC_SRV.Asoc_notif_property" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="followUpNotifications" Role="FromRole_Asoc_notif_property"/>
+                    <End EntitySet="properties" Role="ToRole_Asoc_notif_property"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_contract_notifs" Association="DATRAIN.BC_SRV.Asoc_contract_notif" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="contracts" Role="FromRole_Asoc_contract_notif"/>
+                    <End EntitySet="notifications" Role="ToRole_Asoc_contract_notif"/>
+                </AssociationSet>
+                <AssociationSet Name="Asoc_succCode_codeOrder" Association="DATRAIN.BC_SRV.Asoc_code_codeOrder" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="succCodeMetadata" Role="FromRole_Asoc_code_codeOrder"/>
+                    <End EntitySet="codeOrders" Role="ToRole_Asoc_code_codeOrder"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link rel="self" href="https://mobile-a71f9a2af.hana.ondemand.com/saperp_pp_bc/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://mobile-a71f9a2af.hana.ondemand.com/saperp_pp_bc/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

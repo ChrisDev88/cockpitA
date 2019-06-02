@@ -1,0 +1,17 @@
+   ______________________________
+ / \                             \.
+|   | This log file was created  |.
+ \_ | by the Wizard, it contains |.
+    | the configuration data     |.
+    | used for the application   |.
+    | generation.                |.
+    |                            |.
+    | It shouldn't be edited     |.
+    | manually, changing it      |.
+    | won't affect the generated |.
+    | sample.                    |.
+    |   _________________________|___
+    |  /                            /.
+    \_/____________________________/.
+
+{"projectName":"CockpitA","projectLocation":"C:\\Users\\ch-Fu\\git\\CockpitA","projectNamespace":"de.datatrain.cockpita","serviceURL":"https://mobile-a71f9a2af.hana.ondemand.com/","applicationID":"de.datatrain.cockpitnative","applicationSecurityConfig":"FORM","jsonPath":null,"senderID":null,"serverKey":null,"isLogEnabled":false,"isLogUploadEnabled":false,"SAPSDKLocation":"MAVEN_LOCAL","generateFileProviderDataFile":true,"generateJavaCode":false,"generateOnlineApp":true,"isUsageIncluded":false}
