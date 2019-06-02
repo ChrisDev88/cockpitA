@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import com.sap.cloud.android.odata.datrain_bc_srv_entities.Tile
 import de.datatrain.cockpita.R
 import de.datatrain.cockpita.inflate
-import kotlinx.android.synthetic.main.tile_template.view.*
+import kotlinx.android.synthetic.main.template_tile.view.*
 
 class TileAdapter(private val tiles: List<Tile>) : RecyclerView.Adapter<TileAdapter.TileHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TileHolder {
-        val inflatedView = parent.inflate(R.layout.tile_template, false)
+        val inflatedView = parent.inflate(R.layout.template_tile, false)
         return TileHolder(inflatedView)
     }
 
