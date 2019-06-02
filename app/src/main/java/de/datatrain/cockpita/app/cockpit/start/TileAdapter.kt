@@ -1,7 +1,5 @@
 package de.datatrain.cockpita.app.cockpit.start
 
-import android.graphics.drawable.Drawable
-import android.support.v4.content.ContextCompat
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.View
@@ -10,10 +8,6 @@ import com.sap.cloud.android.odata.datrain_bc_srv_entities.Tile
 import de.datatrain.cockpita.R
 import de.datatrain.cockpita.inflate
 import kotlinx.android.synthetic.main.tile_template.view.*
-
-
-
-
 
 class TileAdapter(private val tiles: List<Tile>) : RecyclerView.Adapter<TileAdapter.TileHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TileHolder {
@@ -47,7 +41,6 @@ class TileAdapter(private val tiles: List<Tile>) : RecyclerView.Adapter<TileAdap
         }
 
         fun bindTile(tile: Tile) {
-
             this.tile = tile
             view.tileName.text = tile.title
             view.tileDescription.text = tile.description
@@ -66,25 +59,8 @@ class TileAdapter(private val tiles: List<Tile>) : RecyclerView.Adapter<TileAdap
                 "app-icon-ticketcenter" -> view.tileIcon.setImageResource(R.drawable.app_icon_ticketcenter);
                 "app-icon-verkehrssicherungspflichten" -> view.tileIcon.setImageResource(R.drawable.app_icon_verkehrssicherungspflichten);
                 "app-icon-company-structure" -> view.tileIcon.setImageResource(R.drawable.app_icon_company_structure);
-                else -> view.tileIcon.setImageResource(R.drawable.hydrant)
+                else -> view.tileIcon.setImageResource(R.drawable.app_icon_calendar)
             }
-
-
-
-            //view.tileIcon.setImageResource(getIcon(tile.iconID));
-
-
         }
-
-        private fun getIconPath(iconId: String) : String {
-            var iconConverted: String
-            iconConverted = "/res/drawable/".plus(iconId.replace("-","_").plus(".png"))
-            return iconConverted
-        }
-
-
-
-
     }
-
 }
