@@ -15,7 +15,15 @@
         android:layout_height="wrap_content"
         app:indeterminate="true"
         style="@style/FioriProgressbar.Horizontal" />
-
+    <TextView
+        android:id="@+id/welcomeStatic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_marginStart="8dp"
+        android:textStyle="bold"
+        android:textSize="26sp"
+        android:text="Herzlich willkommen," />
     <TextView
         android:id="@+id/welcomeText"
         android:layout_width="match_parent"
@@ -23,8 +31,7 @@
         android:layout_margin="8dp"
         android:layout_marginStart="8dp"
         android:textStyle="bold"
-        android:textSize="26sp"
-        android:text="Hello World!" />
+        android:textSize="26sp" />
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

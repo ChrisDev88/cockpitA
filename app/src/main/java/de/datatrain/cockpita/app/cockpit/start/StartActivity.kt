@@ -10,6 +10,7 @@ import com.sap.cloud.mobile.fiori.indicator.FioriProgressBar
 import com.sap.cloud.mobile.odata.DataQuery
 import de.datatrain.cockpita.app.SAPWizardApplication
 import android.support.v7.widget.GridLayoutManager
+import android.widget.TextView
 import com.sap.cloud.android.odata.datrain_bc_srv_entities.DATRAIN_BC_SRV_EntitiesMetadata.EntityTypes.tile
 import com.sap.cloud.android.odata.datrain_bc_srv_entities.User
 import de.datatrain.cockpita.R
@@ -33,10 +34,10 @@ class StartActivity : AppCompatActivity() {
             var progressBar: FioriProgressBar = findViewById(R.id.progressBar)
             progressBar.visibility = View.GONE
             for (tile in tiles) {
-                Log.d(this.javaClass.name, "${tile.id}")
+                Log.d("myDebug", "${tile.id}")
             }
             showTiles(tiles);
-        }, { re: RuntimeException -> Log.d(this.toString(), "An error occurred when querying for tiles:  " + re.message) })
+        }, { re: RuntimeException -> Log.d("myDebug", "An error occurred when querying for tiles:  " + re.message) })
     }
 
     fun showTiles(tiles: List<Tile>) {
@@ -51,9 +52,10 @@ class StartActivity : AppCompatActivity() {
         val query = DataQuery().withKey(User.key("P000001"))
 
         bcService?.getUser1Async(query, { user: User ->
-            Log.d(this.javaClass.name, "${user.id}")
-        }, { re: RuntimeException -> Log.d(this.toString(), "An error occurred when querying for User:  " + re.message) })
-
-
+            Log.d("myDebug", "${user.nameFirst}")
+            var textView: TextView = findViewById(R.id.welcomeText)
+            val text: String = user.nameFirst.plus(" ").plus(user.nameLast)
+            textView.setText(text)
+        }, { re: RuntimeException -> Log.d("myDebug", "An error occurred when querying for User:  " + re.message) })
     }
 }
