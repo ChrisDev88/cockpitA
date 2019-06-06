@@ -13,6 +13,9 @@ import android.support.v7.widget.GridLayoutManager
 import android.widget.TextView
 import com.sap.cloud.android.odata.datrain_bc_srv_entities.DATRAIN_BC_SRV_EntitiesMetadata.EntityTypes.tile
 import com.sap.cloud.android.odata.datrain_bc_srv_entities.User
+import com.sap.cloud.mobile.foundation.common.ClientProvider
+import com.sap.cloud.mobile.foundation.user.UserInfo
+import com.sap.cloud.mobile.foundation.user.UserRoles
 import de.datatrain.cockpita.R
 
 
@@ -46,10 +49,10 @@ class StartActivity : AppCompatActivity() {
         recycler.adapter = TileAdapter(tiles)
     }
 
-    fun getUser() {
+    fun getUserData(userId: String) {
         val sapServiceManager = (application as SAPWizardApplication).sapServiceManager
         var bcService = sapServiceManager.dATRAIN_BC_SRV_Entities
-        val query = DataQuery().withKey(User.key("P000001"))
+        val query = DataQuery().withKey(User.key(userId))
 
         bcService?.getUser1Async(query, { user: User ->
             Log.d("myDebug", "${user.nameFirst}")
@@ -57,5 +60,30 @@ class StartActivity : AppCompatActivity() {
             val text: String = user.nameFirst.plus(" ").plus(user.nameLast)
             textView.setText(text)
         }, { re: RuntimeException -> Log.d("myDebug", "An error occurred when querying for User:  " + re.message) })
+    }
+
+    private fun getUser(){
+        val myTag = "myDebug"
+        Log.d(myTag, "In getUser")
+        val sapWizardApplication = application as SAPWizardApplication
+        val settingsParameters = sapWizardApplication.settingsParameters
+        val roles = UserRoles(ClientProvider.get(), settingsParameters!!)
+        val callbackListener = object : UserRoles.CallbackListener {
+            override fun onSuccess(ui: UserInfo) {
+                Log.d(myTag, "User Name: " + ui.userName)
+                Log.d(myTag, "User Id: " + ui.id)
+                val roleList = ui.roles
+                Log.d(myTag, "User has the following Roles")
+                for (i in roleList!!.indices) {
+                    Log.d(myTag, "Role Name " + roleList[i])
+                }
+                getUserData(ui.id)
+            }
+
+            override fun onError(throwable: Throwable) {
+                Log.d(myTag, throwable.message)
+            }
+        }
+        roles.load(callbackListener)
     }
 }

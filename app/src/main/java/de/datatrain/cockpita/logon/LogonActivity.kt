@@ -241,7 +241,7 @@ class LogonActivity: AppCompatActivity() {
             errorHandler?.sendErrorMessage(errorMessage)
         }
     }
-
+    
     companion object {
         const val IS_RESUMING_KEY = "isResuming"
         val IS_AWAITING_RESULT_KEY = "isAwaitingResult"
