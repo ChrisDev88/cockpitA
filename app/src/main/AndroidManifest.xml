@@ -19,9 +19,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.cockpit.start.StartActivity"
-            android:label="@string/application_name"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:name=".app.cockpit.home.HomeActivity"
+            android:label=""
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
         </activity>
         <activity
             android:name="com.sap.cloud.mobile.onboarding.launchscreen.LaunchScreenActivity"

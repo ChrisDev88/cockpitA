@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 
 import de.datatrain.cockpita.R
-import de.datatrain.cockpita.app.cockpit.start.StartActivity
+import de.datatrain.cockpita.app.cockpit.home.HomeActivity
 import de.datatrain.cockpita.app.ConfigurationData
 import de.datatrain.cockpita.app.ErrorHandler
 import de.datatrain.cockpita.app.ErrorMessage
@@ -220,7 +220,7 @@ class LogonActivity: AppCompatActivity() {
 
     private fun startSimpleActivity() {
         sapServiceManager!!.openODataStore {
-            val intent = Intent(this@LogonActivity, StartActivity::class.java)
+            val intent = Intent(this@LogonActivity, HomeActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
             startActivityForResult(intent, SIMPLE_ACTIVITY)
         } 

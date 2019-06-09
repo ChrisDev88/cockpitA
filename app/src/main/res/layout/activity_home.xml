@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="10"
-    tools:context=".app.cockpit.start.StartActivity">
+    tools:context=".app.cockpit.home.HomeActivity">
 
     <com.sap.cloud.mobile.fiori.indicator.FioriProgressBar
         android:id="@+id/progressBar"
@@ -15,23 +15,19 @@
         android:layout_height="wrap_content"
         app:indeterminate="true"
         style="@style/FioriProgressbar.Horizontal" />
-    <TextView
-        android:id="@+id/welcomeStatic"
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:layout_marginStart="8dp"
-        android:textStyle="bold"
-        android:textSize="26sp"
-        android:text="Herzlich willkommen," />
-    <TextView
-        android:id="@+id/welcomeText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:layout_marginStart="8dp"
-        android:textStyle="bold"
-        android:textSize="26sp" />
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:navigationIcon="@drawable/ic_action_menu"
+        app:navigationContentDescription="Navigation Description"
+        />
+
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

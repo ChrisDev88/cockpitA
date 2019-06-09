@@ -1,4 +1,4 @@
-package de.datatrain.cockpita.app.cockpit.start
+package de.datatrain.cockpita.app.cockpit.home
 
 import android.support.v7.widget.RecyclerView
 import android.util.Log
