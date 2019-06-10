@@ -1,6 +1,7 @@
-<resources  xmlns:tools="http://schemas.android.com/tools"
-             tools:ignore="MissingTranslation" >
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="application_name">CockpitA</string>
     <string name="action_settings">Settings</string>
     <string name="hello">Hello World!</string>
+    <string name="title_activity_ma_dashboard">Dashboard</string>
+    <string name="title_activity_base">BaseActivity</string>
 </resources>

@@ -1,7 +1,5 @@
 package de.datatrain.cockpita.app.cockpit.home
 
-import android.app.PendingIntent.getActivity
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.RecyclerView
 import android.util.Log
@@ -11,25 +9,19 @@ import com.sap.cloud.mobile.fiori.indicator.FioriProgressBar
 import com.sap.cloud.mobile.odata.DataQuery
 import de.datatrain.cockpita.app.SAPWizardApplication
 import android.support.v7.widget.GridLayoutManager
-import android.view.Menu
-import android.view.MenuItem
-import android.support.v7.widget.Toolbar;
 import com.sap.cloud.android.odata.datrain_bc_srv_entities.User
 import com.sap.cloud.mobile.foundation.common.ClientProvider
 import com.sap.cloud.mobile.foundation.user.UserInfo
 import com.sap.cloud.mobile.foundation.user.UserRoles
-import android.R
-import android.support.v7.widget.PopupMenu
-import android.view.MenuInflater
-import android.widget.Toast
-import com.sap.cloud.android.odata.datrain_bc_srv_entities.DATRAIN_BC_SRV_EntitiesMetadata.EntityTypes.tile
+import de.datatrain.cockpita.R
+import de.datatrain.cockpita.app.cockpit.BaseActivity
 
-
-class HomeActivity : AppCompatActivity()  {
+class HomeActivity : BaseActivity()  {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(de.datatrain.cockpita.R.layout.activity_home)
+        setSupportActionBar(findViewById(R.id.toolbar))
         getTiles()
         getUser()
     }
@@ -46,7 +38,6 @@ class HomeActivity : AppCompatActivity()  {
                 Log.d("myDebug", "${tile.id}")
             }
             showTiles(tiles);
-            setMenu(tiles)
         }, { re: RuntimeException -> Log.d("myDebug", "An error occurred when querying for tiles:  " + re.message) })
     }
 
@@ -93,56 +84,4 @@ class HomeActivity : AppCompatActivity()  {
         }
         roles.load(callbackListener)
     }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(de.datatrain.cockpita.R.menu.header, menu)
-        return true
-    }
-
-
-    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
-        de.datatrain.cockpita.R.id.action_settings -> {
-            // User chose the "Settings" item, show the app settings UI...
-            true
-        }
-
-        de.datatrain.cockpita.R.id.action_user_notifications -> {
-            // User chose the "Favorite" action, mark the current item
-            // as a favorite..
-            true
-        }
-
-        else -> {
-            // If we got here, the user's action was not recognized.
-            // Invoke the superclass to handle it.
-            super.onOptionsItemSelected(item)
-        }
-    }
-
-    fun setMenu(tiles:List<Tile>) {
-        val toolbar = findViewById(de.datatrain.cockpita.R.id.my_toolbar) as Toolbar
-        setSupportActionBar(toolbar)
-        toolbar.setNavigationOnClickListener {
-            Toast.makeText(applicationContext,"Toolbar", Toast.LENGTH_SHORT).show()
-            val popupMenu = PopupMenu(this, it)
-            popupMenu.setOnMenuItemClickListener { item ->
-
-                Log.d("myDebug", item.title.toString())
-                when(item.title){
-                    "Leistungen" -> Toast.makeText(applicationContext,"Toolbar", Toast.LENGTH_SHORT).show()
-                }
-                false
-            }
-
-
-            val inflater = popupMenu.menuInflater
-            inflater.inflate(de.datatrain.cockpita.R.menu.menu, popupMenu.menu)
-
-            for (tile in tiles) {
-                popupMenu.menu.add(tile.title)
-            }
-            popupMenu.show()
-        }
-    }
-
 }
