@@ -39,6 +39,8 @@ android {
         testInstrumentationRunnerArguments clearPackageData: 'true'
         dataBinding.enabled = true
         ndk {
+            //exclude 64 bit libraries as offline library is 32 bit only
+            abiFilters "armeabi-v7a", "x86"
         }
     }
     buildTypes {
@@ -89,6 +91,7 @@ dependencies {
     implementation group: 'com.sap.cloud.android', name: 'fiori', version: sdkVersion
     implementation group: 'com.sap.cloud.android', name: 'onboarding', version: sdkVersion
     implementation group: 'com.sap.cloud.android', name: 'odata', version: sdkVersion
+    implementation group: 'com.sap.cloud.android', name: 'offline-odata', version: sdkVersion
     implementation group: 'com.sap.cloud.android', name: 'foundation', version: sdkVersion
 
     // Logging dependency
