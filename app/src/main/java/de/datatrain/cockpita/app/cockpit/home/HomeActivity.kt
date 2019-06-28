@@ -1,22 +1,22 @@
 package de.datatrain.cockpita.app.cockpit.home
 
 import android.os.Bundle
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.View
 import com.sap.cloud.android.odata.datrain_bc_srv_entities.Tile
-import com.sap.cloud.mobile.fiori.indicator.FioriProgressBar
-import com.sap.cloud.mobile.odata.DataQuery
-import de.datatrain.cockpita.app.SAPWizardApplication
-import android.support.v7.widget.GridLayoutManager
 import com.sap.cloud.android.odata.datrain_bc_srv_entities.User
+import com.sap.cloud.mobile.fiori.indicator.FioriProgressBar
 import com.sap.cloud.mobile.foundation.common.ClientProvider
 import com.sap.cloud.mobile.foundation.user.UserInfo
 import com.sap.cloud.mobile.foundation.user.UserRoles
+import com.sap.cloud.mobile.odata.DataQuery
 import de.datatrain.cockpita.R
+import de.datatrain.cockpita.app.SAPWizardApplication
 import de.datatrain.cockpita.app.cockpit.BaseActivity
 
-class HomeActivity : BaseActivity()  {
+class HomeActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

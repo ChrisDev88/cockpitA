@@ -1,38 +1,27 @@
 package de.datatrain.cockpita.app.cockpit.modules.ma
 
-import android.databinding.DataBindingUtil.setContentView
+
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar
-import de.datatrain.cockpita.R
-import de.datatrain.cockpita.app.cockpit.BaseActivity
-import de.datatrain.cockpita.app.cockpit.home.HomeActivity
-
-import kotlinx.android.synthetic.main.activity_ma_dashboard.*
-import okhttp3.OkHttpClient
-import com.sap.cloud.mobile.foundation.common.ClientProvider
-import com.sap.cloud.mobile.odata.core.AndroidSystem
-import com.sap.cloud.mobile.odata.offline.OfflineODataParameters
-import com.sap.cloud.mobile.odata.offline.OfflineODataProvider
-import java.net.URL
-import com.sap.cloud.mobile.odata.offline.OfflineODataDefiningQuery
-
-
-import de.datatrain.cockpita.app.SAPWizardApplication
-import com.sap.cloud.mobile.odata.offline.OfflineODataException
-import android.os.Looper
 import android.os.Handler
+import android.os.Looper
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import com.sap.cloud.android.odata.datrain_bc_srv_entities.DATRAIN_BC_SRV_Entities
-import com.sap.cloud.mobile.fiori.indicator.FioriProgressBar
+import com.sap.cloud.mobile.foundation.common.ClientProvider
+import com.sap.cloud.mobile.odata.core.AndroidSystem
+import com.sap.cloud.mobile.odata.offline.OfflineODataDefiningQuery
+import com.sap.cloud.mobile.odata.offline.OfflineODataException
+import com.sap.cloud.mobile.odata.offline.OfflineODataParameters
+import com.sap.cloud.mobile.odata.offline.OfflineODataProvider
+import de.datatrain.cockpita.app.SAPWizardApplication
+import de.datatrain.cockpita.app.cockpit.BaseActivity
+import kotlinx.android.synthetic.main.activity_ma_dashboard.*
+import java.net.URL
 
 
 class MaDashboard : BaseActivity() {
 
-    val SERVICE_URL = "https://mobile-a71f9a2af.hana.ondemand.com/"
+    val SERVICE_URL = "https://mobile-a71f9a2af.hana.ondemand.com"
     val CONNECTION_ID = "saperp_pp_bc"
     var myServiceContainer: DATRAIN_BC_SRV_Entities? = null
 
@@ -40,6 +29,7 @@ class MaDashboard : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(de.datatrain.cockpita.R.layout.activity_ma_dashboard)
         setSupportActionBar(toolbar)
+        setupOfflineStore()
     }
 
     fun setupOfflineStore() {
@@ -57,7 +47,7 @@ class MaDashboard : BaseActivity() {
         // Add defining queries
         offlineODataProvider.addDefiningQuery(
                 OfflineODataDefiningQuery("Notifs",
-                        "/notifications?\$filter=applicationId eq QA",
+                        "/notifications?\$filter=applicationId eq 'QA'",
                         false))
 
         val sapServiceManager = (application as SAPWizardApplication).sapServiceManager
