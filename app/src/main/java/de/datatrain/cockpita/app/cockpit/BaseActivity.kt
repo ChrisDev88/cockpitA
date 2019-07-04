@@ -18,6 +18,7 @@ import de.datatrain.cockpita.R
 import de.datatrain.cockpita.app.SAPWizardApplication
 import de.datatrain.cockpita.app.cockpit.home.HomeActivity
 import de.datatrain.cockpita.app.cockpit.modules.ma.MaDashboard
+import de.datatrain.cockpita.app.cockpit.modules.mk.TenantSearch
 
 import kotlinx.android.synthetic.main.activity_base.*
 
@@ -79,6 +80,7 @@ open class BaseActivity : AppCompatActivity() {
                 when (item.title) {
                     "Leistungen" -> Toast.makeText(applicationContext, "Toolbar", Toast.LENGTH_SHORT).show()
                     "Meine Aufgaben" -> startActivityMeineAufgaben()
+                    "Meine Mieter" -> startActivityMeineMieter()
                     "Startseite" -> startActivityHome()
                 }
                 false
@@ -101,6 +103,12 @@ open class BaseActivity : AppCompatActivity() {
         val intent = Intent(this, MaDashboard::class.java)
         startActivityForResult(intent,1)
     }
+
+    private fun startActivityMeineMieter() {
+        val intent = Intent(this, TenantSearch::class.java)
+        startActivityForResult(intent,1)
+    }
+
 
     private fun startActivityHome() {
         val intent = Intent(this, HomeActivity::class.java)

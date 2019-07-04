@@ -9,6 +9,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".app.cockpit.modules.mk.TenantSearch"
+            android:label="@string/title_activity_tenant_search"
+            android:theme="@style/NoActionBar"></activity>
+        <activity
             android:name=".app.cockpit.BaseActivity"
             android:label="@string/title_activity_base"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

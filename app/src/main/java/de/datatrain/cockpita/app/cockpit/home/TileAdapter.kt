@@ -2,15 +2,13 @@ package de.datatrain.cockpita.app.cockpit.home
 
 import android.content.Context
 import android.content.Intent
-import android.support.v4.app.ActivityCompat.startActivityForResult
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.View
 import android.view.ViewGroup
-import com.sap.cloud.android.odata.datrain_bc_srv_entities.Activity
-import com.sap.cloud.android.odata.datrain_bc_srv_entities.Contact
 import com.sap.cloud.android.odata.datrain_bc_srv_entities.Tile
 import de.datatrain.cockpita.app.cockpit.modules.ma.MaDashboard
+import de.datatrain.cockpita.app.cockpit.modules.mk.TenantSearch
 import de.datatrain.cockpita.inflate
 import kotlinx.android.synthetic.main.template_tile.view.*
 
@@ -44,6 +42,12 @@ class TileAdapter(private val tiles: List<Tile>) : RecyclerView.Adapter<TileAdap
         override fun onClick(v: View) {
             Log.d("myDebug", adapterPosition.toString())
             when(adapterPosition){
+                0 -> {
+                    var context: Context = v.context
+                    val intent = Intent(context.applicationContext, TenantSearch::class.java)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    context.applicationContext.startActivity(intent)
+                }
                 1 -> {
                     var context: Context = v.context
                     val intent = Intent(context.applicationContext, MaDashboard::class.java)
