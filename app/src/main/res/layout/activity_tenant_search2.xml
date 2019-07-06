@@ -5,43 +5,65 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".app.cockpit.modules.mk.TenantSearch">
+    tools:context=".app.cockpit.modules.mk.TenantSearch"
+    android:id="@+id/coordinatorLayout">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/app_bar_height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
-        android:theme="@style/AppBarOverlay">
+        android:theme="@style/AppBarOverlay"
+        tools:layout_conversion_absoluteHeight="180dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_conversion_absoluteWidth="411dp">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/toolbar_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:fitsSystemWindows="true"
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:toolbarId="@+id/toolbar">
+            app:toolbarId="@+id/toolbar"
+            tools:layout_conversion_absoluteHeight="180dp"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_conversion_absoluteWidth="411dp">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 app:layout_collapseMode="pin"
-                app:popupTheme="@style/PopupOverlay" />
+                app:popupTheme="@style/PopupOverlay"
+                tools:layout_conversion_absoluteHeight="56dp"
+                tools:layout_editor_absoluteY="0dp"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_conversion_absoluteWidth="411dp" />
 
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_tenant_search" />
+    <include layout="@layout/content_tenant_search"
+        tools:layout_conversion_absoluteHeight="731dp"
+        tools:layout_editor_absoluteY="180dp"
+        tools:layout_editor_absoluteX="0dp"
+        android:layout_height="wrap_content"
+        tools:layout_conversion_absoluteWidth="411dp"
+        android:layout_width="wrap_content" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/fab_margin"
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="bottom|end"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        app:srcCompat="@android:drawable/ic_dialog_email"
+        tools:layout_conversion_absoluteHeight="56dp"
+        tools:layout_editor_absoluteY="152dp"
+        tools:layout_editor_absoluteX="339dp"
+        tools:layout_conversion_absoluteWidth="56dp" />
 
 </android.support.design.widget.CoordinatorLayout>
