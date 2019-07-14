@@ -4,7 +4,34 @@
     <string name="hello">Hello World!</string>
     <string name="title_activity_ma_dashboard">Dashboard</string>
     <string name="title_activity_base">BaseActivity</string>
+
+
+    <string name="showMoreFields">Weitere Felder anzeigen</string>
     <string name="title_activity_tenant_search">TenantSearch</string>
+    <string name="tenantViewHeadline">Meine Mieter</string>
+    <string name="tenantViewDescription">Suchen Sie nach Mietern und Objekten durch Angabe der für Sie relevanten Parameter.</string>
+    <string name="tenantFirstName">Vorname</string>
+    <string name="tenantLastName">Nachname</string>
+    <string name="tenantStreet">Straße</string>
+    <string name="tenantHouseNo">Hausnummer</string>
+    <string name="tenantPostCode">Postleitzahl</string>
+    <string name="tenantCity">Ort</string>
+    <string name="tenantBukrs">Buchungskreis</string>
+    <string name="tenantSwenr">Wirtschaftseinheit</string>
+    <string name="tenantRecnDate">Vertrag gültig am</string>
+    <string name="tenantObjectsAll">Alle Objekte</string>
+    <string name="tenantObjectsRent">Vermietete Objekte</string>
+    <string name="tenantObjectsEmpty">Leerstandsobjekte</string>
+    <string name="tenantLabelRTCheckbox">Mietvertragsart</string>
+    <string name="tenantRecnTypeWohn">Wohnungsmietvertrag</string>
+    <string name="tenantRecnTypeStell">Stellplatzmietvertrag</string>
+    <string name="tenantRecnTypeKauGew">Kaution Vermietung Gewerbe</string>
+    <string name="tenantRecnTypeKautWoh">Kaution Vermietung Wohnung</string>
+    <string name="tenantSearchTenantGo">Suchen</string>
+    <string name="tenantSearchTenantCancel">Abbrechen</string>
+    <string name="tenantSearchTenantReset">Zurücksetzen</string>
+
+
     <string name="large_text">
         "Material is the metaphor.\n\n"
 

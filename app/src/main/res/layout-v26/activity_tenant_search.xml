@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:layout_editor_absoluteX="8dp"
     android:fillViewport="true"
-    tools:layout_editor_absoluteY="405dp">
+    tools:layout_editor_absoluteX="8dp">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:weightSum="10"
         tools:context=".app.cockpit.home.HomeActivity">
 
@@ -21,6 +20,7 @@
             style="@style/FioriProgressbar.Horizontal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             app:indeterminate="true"
             app:layout_constraintBottom_toTopOf="@+id/appBarLayout"
             app:layout_constraintEnd_toEndOf="parent"
@@ -55,11 +55,13 @@
         <TextView
             android:id="@+id/textView2"
 
+            style="@style/FioriTextStyle.H6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="20dp"
             android:text="@string/tenantViewHeadline"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
@@ -83,14 +85,14 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
+            android:autofillHints=""
             android:ems="10"
             android:hint="@string/tenantFirstName"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3"
-            android:autofillHints="" />
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
         <EditText
             android:id="@+id/inputLastName"
@@ -99,13 +101,13 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
+            android:autofillHints=""
             android:ems="10"
             android:hint="@string/tenantLastName"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/inputFirstName"
-            android:autofillHints="" />
+            app:layout_constraintTop_toBottomOf="@+id/inputFirstName" />
 
         <EditText
             android:id="@+id/inputStreet"
@@ -114,14 +116,14 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
+            android:autofillHints=""
             android:ems="10"
             android:hint="@string/tenantStreet"
             android:inputType="textPersonName"
             android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/inputLastName"
-            android:autofillHints="" />
+            app:layout_constraintTop_toBottomOf="@+id/inputLastName" />
 
         <EditText
             android:id="@+id/inputHouseNo"
@@ -130,13 +132,13 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
+            android:autofillHints=""
             android:ems="10"
             android:hint="@string/tenantHouseNo"
             android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/inputStreet"
-            android:autofillHints="" />
+            app:layout_constraintTop_toBottomOf="@+id/inputStreet" />
 
         <EditText
             android:id="@+id/inputPostCode"
@@ -145,9 +147,11 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
+            android:autofillHints=""
             android:ems="10"
             android:hint="@string/tenantPostCode"
             android:inputType="number"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/inputHouseNo" />
@@ -159,9 +163,11 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
+            android:autofillHints=""
             android:ems="10"
             android:hint="@string/tenantCity"
             android:inputType="textPersonName"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/inputPostCode" />
@@ -173,9 +179,11 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
+            android:autofillHints=""
             android:ems="10"
             android:hint="@string/tenantBukrs"
             android:inputType="number"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/inputCity" />
@@ -187,9 +195,11 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
+            android:autofillHints=""
             android:ems="10"
             android:hint="@string/tenantSwenr"
             android:inputType="number"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/inputBukrs" />
@@ -201,10 +211,12 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
+            android:autofillHints=""
             android:ems="10"
             android:focusable="false"
             android:hint="@string/tenantRecnDate"
             android:inputType="date"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/inputSwenr" />
@@ -214,9 +226,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/inputRecnDate">
+            app:layout_constraintTop_toBottomOf="@+id/inputRecnDate"
+            app:layout_constraintVertical_bias="0.047">
 
             <RadioButton
                 android:id="@+id/radioObjectsAll"
@@ -246,6 +263,126 @@
                 android:layout_marginEnd="8dp"
                 android:text="@string/tenantObjectsEmpty" />
         </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/tenantLabelRTCheckbox"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+        <CheckBox
+            android:id="@+id/checkBoxRecnTypeWohn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/tenantRecnTypeWohn"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <CheckBox
+            android:id="@+id/checkBoxRecnTypeStell"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/tenantRecnTypeStell"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkBoxRecnTypeWohn" />
+
+        <CheckBox
+            android:id="@+id/checkBoxRecnTypeKautGew"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/tenantRecnTypeKauGew"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkBoxRecnTypeStell" />
+
+        <CheckBox
+            android:id="@+id/checkBoxRecnTypeKautWoh"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/tenantRecnTypeKautWoh"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkBoxRecnTypeKautGew" />
+
+        <Button
+            android:id="@+id/buttonShowMoreFields"
+            style="@style/Onboarding.Default.Light.Theme.QRConfirmButton"
+            android:layout_width="240dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="8dp"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/ic_add_box_black_24dp"
+            android:onClick="showMoreFields"
+            android:text="@string/showMoreFields"
+            android:textColor="#2196F3"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkBoxRecnTypeKautWoh" />
+
+        <Button
+            android:id="@+id/buttonSearchTenant"
+            style="@style/Onboarding.Default.Light.Theme.QRConfirmButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/tenantSearchTenantGo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonShowMoreFields" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/tenantSearchTenantCancel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonSearchTenant" />
+
+        <Button
+            android:id="@+id/tenantSearchReset"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@android:drawable/screen_background_light_transparent"
+            android:text="@string/tenantSearchTenantReset"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button3" />
 
 
     </android.support.constraint.ConstraintLayout>
